@@ -69,7 +69,7 @@ export default function Footer() {
                 <Facebook size={16} />
               </a>
               <a
-                href="https://www.instagram.com/atlasplumbing"
+                href="https://www.instagram.com/atlas__plumbing/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
@@ -128,9 +128,9 @@ export default function Footer() {
             <h3 className="font-bold text-base mb-5 text-white">{fo.contactUs}</h3>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+15551234567" className="flex items-start gap-3 text-slate-400 hover:text-white text-sm transition-colors">
+                <a href="tel:+18569042097" className="flex items-start gap-3 text-slate-400 hover:text-white text-sm transition-colors">
                   <Phone size={16} className="flex-shrink-0 mt-0.5 text-orange-400" />
-                  (555) 123-4567
+                  (856) 904-2097
                 </a>
               </li>
               <li>
@@ -149,7 +149,7 @@ export default function Footer() {
             </ul>
 
             <a
-              href="tel:+15551234567"
+              href="tel:+18569042097"
               className="mt-6 inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors"
             >
               <Phone size={14} />
@@ -168,8 +168,8 @@ export default function Footer() {
             <p>Owner: Michael G. Bonaventure</p>
           </div>
           <div className="flex gap-5">
-            <Link href="#" className="hover:text-white transition-colors">{fo.privacyPolicy}</Link>
-            <Link href="#" className="hover:text-white transition-colors">{fo.termsOfService}</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">{fo.privacyPolicy}</Link>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">{fo.termsOfService}</Link>
           </div>
         </div>
       </div>

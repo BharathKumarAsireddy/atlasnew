@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
               <div className="col-span-3 row-span-2 relative rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute ken-burns" style={{ inset: '-8%' }}>
                   <Image
-                    src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&q=80"
+                    src="/plumbing/why-plumbing-main.jpg"
                     alt="Professional plumber fixing a pipe"
                     fill
                     className="object-cover"
@@ -49,10 +49,10 @@ export default function WhyChooseUs() {
               {/* Top-right small image */}
               <div className="col-span-2 relative rounded-xl overflow-hidden shadow-lg group">
                 <Image
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80"
+                  src="/plumbing/why-plumbing-top.jpg"
                   alt="Plumber working on pipes"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105 ${imgIn ? 'scale-100' : 'scale-110'}`}
                   sizes="(max-width: 1024px) 40vw, 20vw"
                 />
                 <div className="absolute inset-0 bg-[#1B2A4A]/30 group-hover:bg-[#1B2A4A]/10 transition-colors duration-300" />
@@ -61,10 +61,10 @@ export default function WhyChooseUs() {
               {/* Bottom-right small image + Experience badge */}
               <div className="col-span-2 relative rounded-xl overflow-hidden shadow-lg group">
                 <Image
-                  src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=500&q=80"
+                  src="/plumbing/why-water-heater.webp"
                   alt="Water heater installation"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105 ${imgIn ? 'scale-100' : 'scale-110'}`}
                   sizes="(max-width: 1024px) 40vw, 20vw"
                 />
                 <div className="absolute inset-0 bg-[#1B2A4A]/30 group-hover:bg-[#1B2A4A]/10 transition-colors duration-300" />

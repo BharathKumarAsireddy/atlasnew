@@ -142,6 +142,32 @@ html {
 }
 .slide-in-right { animation: slideInRight 0.7s ease-out both; }
 
+/* ─── Hero carousel — slide right-to-left ────────────────────────────────── */
+@keyframes heroSlideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0%);   }
+}
+@keyframes heroSlideOut {
+  from { transform: translateX(0%);    }
+  to   { transform: translateX(-100%); }
+}
+.hero-slide-enter { animation: heroSlideIn  0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.hero-slide-exit  { animation: heroSlideOut 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+/* ─── Zoom-in reveal — scroll-triggered image entrance ───────────────────── */
+@keyframes zoomInReveal {
+  from { transform: scale(1.12); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.img-zoom-reveal {
+  animation: zoomInReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Hero plumber zoom-in on load */
+.hero-img-zoom {
+  animation: zoomInReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
 /* ─── Marquee — infinite right-to-left scroll ─────────────────────────────── */
 @keyframes marquee {
   0%   { transform: translateX(0); }

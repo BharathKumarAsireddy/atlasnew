@@ -59,7 +59,7 @@ export default function ServiceRow({
               src={img}
               alt={alt}
               fill
-              className="object-cover"
+              className={`object-cover transition-transform duration-[1100ms] ease-out ${imgIn ? 'scale-100' : 'scale-110'}`}
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             {/* dark overlay so icon stands out */}
@@ -110,7 +110,7 @@ export default function ServiceRow({
               </ul>
 
               <a
-                href="tel:+15551234567"
+                href="tel:+18569042097"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all shadow-lg hover:-translate-y-0.5"
               >
                 <Phone size={15} />

@@ -159,7 +159,7 @@ export default function AtlasVan({ className }: { className?: string }) {
         fill="white"
         textAnchor="middle"
       >
-        (555) 123-4567
+        (856) 904-2097
       </text>
 
       {/* Five-star rating */}

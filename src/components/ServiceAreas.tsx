@@ -31,7 +31,7 @@ export default function ServiceAreas() {
               cardIn ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl min-h-[440px]">
+            <div className={`relative rounded-2xl overflow-hidden shadow-2xl min-h-[440px] transition-transform duration-[1000ms] ease-out ${cardIn ? 'scale-100' : 'scale-90'}`}>
               <iframe
                 title="Atlas Plumbing location"
                 src="https://maps.google.com/maps?q=125+Patriots+Ridge+Drive,+Deptford,+NJ+08096&output=embed"
@@ -109,11 +109,11 @@ export default function ServiceAreas() {
                 <p className="text-orange-700 text-sm">{sa.callUs}</p>
               </div>
               <a
-                href="tel:+15551234567"
+                href="tel:+18569042097"
                 className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-orange-500 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors whitespace-nowrap flex-shrink-0"
               >
                 <Phone size={14} />
-                (555) 123-4567
+                (856) 904-2097
               </a>
             </div>
           </div>

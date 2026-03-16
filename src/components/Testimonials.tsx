@@ -6,10 +6,10 @@ import { useInView } from '@/hooks/useInView'
 import { useLanguage } from '@/context/LanguageContext'
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',  alt: 'Emergency pipe repair' },
-  { src: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80', alt: 'Water heater installation' },
-  { src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80', alt: 'Leak detection work' },
-  { src: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80', alt: 'Professional plumber' },
+  { src: '/plumbing/emergency-plumbing.webp',    alt: 'Emergency pipe repair' },
+  { src: '/plumbing/water-heater-install.webp',  alt: 'Water heater installation' },
+  { src: '/plumbing/drain-cleaning.avif',        alt: 'Drain cleaning service' },
+  { src: '/plumbing/leak-detection.png',         alt: 'Leak detection work' },
 ]
 
 export default function Testimonials() {
@@ -58,7 +58,7 @@ export default function Testimonials() {
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                className={`object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${gallIn ? 'scale-100' : 'scale-110'}`}
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-[#0D1929]/50 group-hover:bg-[#0D1929]/25 transition-colors duration-300" />

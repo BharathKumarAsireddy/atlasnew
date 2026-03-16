@@ -71,7 +71,7 @@ export default function HeatingContent() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+18569042097"
                   className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#0D1929] font-bold px-7 py-4 rounded-xl text-base transition-all shadow-lg hover:-translate-y-0.5"
                 >
                   <Phone size={18} />

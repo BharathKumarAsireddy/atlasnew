@@ -9,20 +9,20 @@ import EstimateForm from '@/components/EstimateForm'
 import ServiceRow from '@/components/ServiceRow'
 import { useLanguage } from '@/context/LanguageContext'
 
-const serviceIcons  = ['Zap', 'Waves', 'GitBranch', 'Search', 'Flame']
+const serviceIcons  = ['GitBranch', 'Flame', 'Droplets', 'Building2', 'Wrench']
 const serviceImgs   = [
-  '/plumbing/residential-repair.jpg',
-  '/plumbing/commercial-pipes.jpg',
-  '/plumbing/pipe-installation.jpg',
-  '/plumbing/faucet-install.jpg',
-  '/plumbing/pump-systems.jpg',
+  '/plumbing/sewer-line.jpg',
+  '/plumbing/water-heater-install.webp',
+  '/plumbing/leak-detection.png',
+  '/plumbing/commercial-plumbing.png',
+  '/plumbing/emergency-plumbing.webp',
 ]
 const serviceAlts   = [
-  'Certified plumber repairing kitchen sink plumbing',
-  'Industrial commercial plumbing pipe network installation',
-  'Professional pipe installation and repair work',
-  'Modern kitchen faucet fixture installation',
-  'Industrial water pump and pressure system installation',
+  'Plumber performing sewer line inspection and repair',
+  'Tankless water heater installation by certified plumber',
+  'Under-sink water filtration system installation',
+  'Commercial plumbing installation in large facility',
+  'Whole house repipe and water service replacement',
 ]
 
 const whyIcons = [ShieldCheck, DollarSign, Clock, ThumbsUp]
@@ -41,7 +41,7 @@ export default function PlumbingContent() {
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute ken-burns" style={{ inset: '-8%' }}>
               <Image
-                src="/plumbing/residential-repair.jpg"
+                src="/plumbing/emergency-plumbing.webp"
                 alt="Professional plumber at work"
                 fill
                 className="object-cover object-center"
@@ -69,7 +69,7 @@ export default function PlumbingContent() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+18569042097"
                   className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#0D1929] font-bold px-7 py-4 rounded-xl text-base transition-all shadow-lg hover:-translate-y-0.5"
                 >
                   <Phone size={18} />
@@ -104,7 +104,7 @@ export default function PlumbingContent() {
         {pp.services.map((svc, i) => (
           <ServiceRow
             key={svc.title}
-            id={['residential-repairs','commercial-plumbing','pipe-installation','fixture-installation','pump-systems'][i]}
+            id={['sewer-line-services','water-heater-services','water-filtration','commercial-plumbing','system-services'][i]}
             title={svc.title}
             description={svc.description}
             iconName={serviceIcons[i]}
@@ -152,8 +152,8 @@ export default function PlumbingContent() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
                 <div className="absolute ken-burns" style={{ inset: '-8%' }}>
                   <Image
-                    src="/plumbing/commercial-pipes.jpg"
-                    alt="Professional Atlas Plumbing commercial pipe systems"
+                    src="/plumbing/drain-cleaning.avif"
+                    alt="Professional Atlas Plumbing technician at work"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"

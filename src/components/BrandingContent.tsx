@@ -24,7 +24,7 @@ const vanFeatures = [
   {
     icon: Phone,
     title: 'Direct Phone Number',
-    desc: '(555) 123-4567 displayed prominently so customers can call the moment they spot our van.',
+    desc: '(856) 904-2097 displayed prominently so customers can call the moment they spot our van.',
   },
   {
     icon: ShieldCheck,
@@ -168,12 +168,12 @@ export default function BrandingContent() {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+15551234567"
+                href="tel:+18569042097"
                 className="flex items-center justify-center gap-2 bg-[#1B2A4A] hover:bg-orange-500 text-white font-bold px-7 py-4 rounded-xl text-sm transition-all shadow-lg hover:-translate-y-0.5"
                 aria-label="Call Atlas Plumbing"
               >
                 <Phone size={16} />
-                Call Now — (555) 123-4567
+                Call Now — (856) 904-2097
               </a>
               <Link
                 href="/#contact"

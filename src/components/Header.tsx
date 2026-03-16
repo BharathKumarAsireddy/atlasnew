@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import {
   Phone, Menu, X, ChevronDown, Wrench, Globe,
   Zap, Waves, Flame, Search, GitBranch, Building2,
-  Thermometer, Wind, Droplets, Settings,
+  Thermometer, Wind, Droplets, Settings, BadgePercent,
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -147,10 +147,13 @@ export default function Header() {
   const [mobileHeat,  setMobileHeat]  = useState(false)
   const [mobileCool,  setMobileCool]  = useState(false)
   const [langOpen,    setLangOpen]    = useState(false)
+  const [visible,     setVisible]     = useState(true)
 
-  const navRef  = useRef<HTMLDivElement>(null)
-  const langRef = useRef<HTMLDivElement>(null)
+  const navRef      = useRef<HTMLDivElement>(null)
+  const langRef     = useRef<HTMLDivElement>(null)
+  const lastScrollY = useRef(0)
 
+  /* ── Click-outside to close dropdowns ── */
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (navRef.current  && !navRef.current.contains(e.target  as Node)) setActiveDrop(null)
@@ -160,252 +163,297 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
+  /* ── Hide on scroll down / show on scroll up ── */
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY
+      if (currentY <= 80) {
+        setVisible(true)
+      } else if (currentY > lastScrollY.current + 5) {
+        setVisible(false)
+        setMenuOpen(false)
+        setActiveDrop(null)
+      } else if (currentY < lastScrollY.current - 5) {
+        setVisible(true)
+      }
+      lastScrollY.current = currentY
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const toggle = (key: DropKey) =>
     setActiveDrop((prev) => (prev === key ? null : key))
 
   const closeDrop = () => setActiveDrop(null)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0D1929] border-b border-white/10 shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <Image
-            src="/logo.jpeg"
-            alt="Atlas Plumbing"
-            width={130}
-            height={44}
-            className="object-contain"
-            priority
-          />
-          <span className="text-orange-300 text-[10px] font-semibold uppercase tracking-widest hidden sm:block">
-            Licensed & Insured
-          </span>
+    <div
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out ${
+        visible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
+      {/* ── Financing Announcement Bar ── */}
+      <div className="bg-[#0a1520] border-b border-orange-500/20 text-white py-2 px-4 flex items-center justify-center gap-3 text-xs sm:text-sm">
+        <span className="bg-orange-500 text-white font-black text-[10px] sm:text-xs px-2.5 py-0.5 rounded-md tracking-widest uppercase flex-shrink-0">
+          0% APR
+        </span>
+        <span className="text-gray-300 font-medium hidden sm:inline">
+          Financing available on water heaters &amp; sewer replacements — no interest, no worries
+        </span>
+        <span className="text-gray-300 font-medium sm:hidden">
+          Financing on water heaters &amp; sewer replacements
+        </span>
+        <Link
+          href="#contact"
+          className="text-orange-400 font-bold hover:text-orange-300 transition-colors whitespace-nowrap flex items-center gap-1"
+        >
+          Apply Now <span aria-hidden="true">→</span>
         </Link>
-
-        {/* Desktop Nav */}
-        <nav
-          ref={navRef}
-          className="hidden lg:flex items-center gap-6"
-          aria-label="Main navigation"
-        >
-          <Link href="/" className="text-gray-300 text-sm font-medium hover:text-white transition-colors">
-            Home
-          </Link>
-
-          {/* Plumbing */}
-          <div className="relative">
-            <button
-              onClick={() => toggle('plumbing')}
-              aria-expanded={activeDrop === 'plumbing'}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                activeDrop === 'plumbing' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              Plumbing
-              <ChevronDown
-                size={14}
-                className={`transition-transform duration-200 ${activeDrop === 'plumbing' ? 'rotate-180' : ''}`}
-              />
-            </button>
-            {activeDrop === 'plumbing' && (
-              <DropPanel services={plumbingServices} pageHref="/plumbing" pageLabel="Plumbing" onClose={closeDrop} />
-            )}
-          </div>
-
-          {/* Heating */}
-          <div className="relative">
-            <button
-              onClick={() => toggle('heating')}
-              aria-expanded={activeDrop === 'heating'}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                activeDrop === 'heating' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              Heating
-              <ChevronDown
-                size={14}
-                className={`transition-transform duration-200 ${activeDrop === 'heating' ? 'rotate-180' : ''}`}
-              />
-            </button>
-            {activeDrop === 'heating' && (
-              <DropPanel services={heatingServices} pageHref="/heating" pageLabel="Heating" onClose={closeDrop} />
-            )}
-          </div>
-
-          {/* Cooling */}
-          <div className="relative">
-            <button
-              onClick={() => toggle('cooling')}
-              aria-expanded={activeDrop === 'cooling'}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                activeDrop === 'cooling' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              Cooling
-              <ChevronDown
-                size={14}
-                className={`transition-transform duration-200 ${activeDrop === 'cooling' ? 'rotate-180' : ''}`}
-              />
-            </button>
-            {activeDrop === 'cooling' && (
-              <DropPanel services={coolingServices} pageHref="/cooling" pageLabel="Cooling" onClose={closeDrop} />
-            )}
-          </div>
-
-          <Link href="#about" className="text-gray-300 text-sm font-medium hover:text-white transition-colors">
-            About
-          </Link>
-          <Link href="#contact" className="text-gray-300 text-sm font-medium hover:text-white transition-colors">
-            Contact
-          </Link>
-        </nav>
-
-        {/* CTAs + Language */}
-        <div className="hidden lg:flex items-center gap-3">
-          {/* Language switcher */}
-          <div className="relative" ref={langRef}>
-            <button
-              onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 text-gray-300 hover:text-white text-sm font-semibold px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
-              aria-label="Select language"
-              aria-expanded={langOpen}
-            >
-              <Globe size={15} />
-              <span className="uppercase">{lang}</span>
-              <ChevronDown size={13} className={`transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {langOpen && (
-              <div className="absolute top-full right-0 mt-2 w-28 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
-                {(['en', 'es'] as Lang[]).map((l) => (
-                  <button
-                    key={l}
-                    onClick={() => { setLang(l); setLangOpen(false) }}
-                    className={`w-full flex items-center gap-2 px-4 py-2.5 text-sm font-semibold transition-colors ${
-                      lang === l ? 'bg-orange-50 text-orange-600' : 'text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    <span>{l === 'en' ? '🇺🇸' : '🇲🇽'}</span>
-                    <span className="uppercase">{l}</span>
-                    {lang === l && <span className="ml-auto text-orange-500 text-xs">✓</span>}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <a
-            href="tel:+15551234567"
-            className="flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0D1929] font-semibold px-4 py-2 rounded-lg text-sm transition-colors shadow-md"
-            aria-label="Call us now"
-          >
-            <Phone size={15} />
-            (555) 123-4567
-          </a>
-          <Link
-            href="#contact"
-            className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-lg text-sm transition-all shadow-md animate-pulse-glow"
-          >
-            Free Estimate
-          </Link>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          className="lg:hidden text-white"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <X size={26} /> : <Menu size={26} />}
-        </button>
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="lg:hidden bg-[#0D1929] border-t border-white/10 px-6 py-4 flex flex-col gap-1">
-          <Link
-            href="/"
-            onClick={() => setMenuOpen(false)}
-            className="text-gray-200 font-medium hover:text-white transition-colors py-3 border-b border-white/10 text-sm"
-          >
-            Home
+      {/* ── Main Nav ── */}
+      <header className="bg-[#0D1929] border-b border-white/10 shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <Image
+              src="/logo.jpeg"
+              alt="Atlas Plumbing"
+              width={130}
+              height={44}
+              className="object-contain"
+              priority
+            />
+            <span className="text-orange-300 text-[10px] font-semibold uppercase tracking-widest hidden sm:block">
+              Licensed & Insured
+            </span>
           </Link>
 
-          <MobileAccordion
-            label="Plumbing"
-            isOpen={mobilePlumb}
-            onToggle={() => setMobilePlumb(!mobilePlumb)}
-            services={plumbingServices}
-            onClose={() => setMenuOpen(false)}
-          />
-          <MobileAccordion
-            label="Heating"
-            isOpen={mobileHeat}
-            onToggle={() => setMobileHeat(!mobileHeat)}
-            services={heatingServices}
-            onClose={() => setMenuOpen(false)}
-          />
-          <MobileAccordion
-            label="Cooling"
-            isOpen={mobileCool}
-            onToggle={() => setMobileCool(!mobileCool)}
-            services={coolingServices}
-            onClose={() => setMenuOpen(false)}
-          />
-
-          <Link
-            href="#about"
-            onClick={() => setMenuOpen(false)}
-            className="text-gray-200 font-medium hover:text-white transition-colors py-3 border-b border-white/10 text-sm"
+          {/* Desktop Nav */}
+          <nav
+            ref={navRef}
+            className="hidden lg:flex items-center gap-6"
+            aria-label="Main navigation"
           >
-            About
-          </Link>
-          <Link
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="text-gray-200 font-medium hover:text-white transition-colors py-3 border-b border-white/10 text-sm"
-          >
-            Contact
-          </Link>
+            <Link href="/" className="text-gray-300 text-sm font-medium hover:text-white transition-colors">
+              Home
+            </Link>
 
-          {/* Language */}
-          <div className="py-3 border-b border-white/10 flex items-center gap-3">
-            <Globe size={15} className="text-gray-400" />
-            <span className="text-gray-400 text-sm">Language:</span>
-            {(['en', 'es'] as Lang[]).map((l) => (
+            {/* Plumbing */}
+            <div className="relative">
               <button
-                key={l}
-                onClick={() => setLang(l)}
-                className={`flex items-center gap-1 px-3 py-1 rounded-lg text-sm font-semibold transition-colors ${
-                  lang === l ? 'bg-orange-500 text-white' : 'text-gray-300 hover:text-white hover:bg-white/10'
+                onClick={() => toggle('plumbing')}
+                aria-expanded={activeDrop === 'plumbing'}
+                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                  activeDrop === 'plumbing' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
                 }`}
               >
-                <span>{l === 'en' ? '🇺🇸' : '🇲🇽'}</span>
-                <span className="uppercase">{l}</span>
+                Plumbing
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${activeDrop === 'plumbing' ? 'rotate-180' : ''}`}
+                />
               </button>
-            ))}
-          </div>
+              {activeDrop === 'plumbing' && (
+                <DropPanel services={plumbingServices} pageHref="/plumbing" pageLabel="Plumbing" onClose={closeDrop} />
+              )}
+            </div>
 
-          <div className="flex flex-col gap-3 pt-4">
+            {/* Heating */}
+            <div className="relative">
+              <button
+                onClick={() => toggle('heating')}
+                aria-expanded={activeDrop === 'heating'}
+                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                  activeDrop === 'heating' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                Heating
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${activeDrop === 'heating' ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {activeDrop === 'heating' && (
+                <DropPanel services={heatingServices} pageHref="/heating" pageLabel="Heating" onClose={closeDrop} />
+              )}
+            </div>
+
+            {/* Cooling */}
+            <div className="relative">
+              <button
+                onClick={() => toggle('cooling')}
+                aria-expanded={activeDrop === 'cooling'}
+                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                  activeDrop === 'cooling' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                Cooling
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${activeDrop === 'cooling' ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {activeDrop === 'cooling' && (
+                <DropPanel services={coolingServices} pageHref="/cooling" pageLabel="Cooling" onClose={closeDrop} />
+              )}
+            </div>
+
+            <Link href="#about" className="text-gray-300 text-sm font-medium hover:text-white transition-colors">
+              About
+            </Link>
+            <Link href="#contact" className="text-gray-300 text-sm font-medium hover:text-white transition-colors">
+              Contact
+            </Link>
+          </nav>
+
+          {/* CTAs + Language */}
+          <div className="hidden lg:flex items-center gap-3">
+            {/* Language switcher */}
+            <div className="relative" ref={langRef}>
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1.5 text-gray-300 hover:text-white text-sm font-semibold px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
+                aria-label="Select language"
+                aria-expanded={langOpen}
+              >
+                <Globe size={15} />
+                <span className="uppercase">{lang}</span>
+                <ChevronDown size={13} className={`transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {langOpen && (
+                <div className="absolute top-full right-0 mt-2 w-28 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+                  {(['en', 'es'] as Lang[]).map((l) => (
+                    <button
+                      key={l}
+                      onClick={() => { setLang(l); setLangOpen(false) }}
+                      className={`w-full flex items-center gap-2 px-4 py-2.5 text-sm font-semibold transition-colors ${
+                        lang === l ? 'bg-orange-50 text-orange-600' : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      <span>{l === 'en' ? '🇺🇸' : '🇲🇽'}</span>
+                      <span className="uppercase">{l}</span>
+                      {lang === l && <span className="ml-auto text-orange-500 text-xs">✓</span>}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <a
-              href="tel:+15551234567"
-              className="flex items-center justify-center gap-2 bg-white text-[#0D1929] font-semibold px-4 py-3 rounded-lg text-sm"
+              href="tel:+18569042097"
+              className="flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0D1929] font-semibold px-4 py-2 rounded-lg text-sm transition-colors shadow-md"
+              aria-label="Call us now"
             >
               <Phone size={15} />
-              (555) 123-4567
+              (856) 904-2097
             </a>
             <Link
               href="#contact"
-              onClick={() => setMenuOpen(false)}
-              className="text-center bg-orange-500 text-white font-bold px-5 py-3 rounded-lg text-sm"
+              className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-lg text-sm transition-all shadow-md animate-pulse-glow"
             >
               Free Estimate
             </Link>
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="lg:hidden text-white"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="lg:hidden bg-[#0D1929] border-t border-white/10 px-6 py-4 flex flex-col gap-1">
+            <Link
+              href="/"
+              onClick={() => setMenuOpen(false)}
+              className="text-gray-200 font-medium hover:text-white transition-colors py-3 border-b border-white/10 text-sm"
+            >
+              Home
+            </Link>
+
+            <MobileAccordion
+              label="Plumbing"
+              isOpen={mobilePlumb}
+              onToggle={() => setMobilePlumb(!mobilePlumb)}
+              services={plumbingServices}
+              onClose={() => setMenuOpen(false)}
+            />
+            <MobileAccordion
+              label="Heating"
+              isOpen={mobileHeat}
+              onToggle={() => setMobileHeat(!mobileHeat)}
+              services={heatingServices}
+              onClose={() => setMenuOpen(false)}
+            />
+            <MobileAccordion
+              label="Cooling"
+              isOpen={mobileCool}
+              onToggle={() => setMobileCool(!mobileCool)}
+              services={coolingServices}
+              onClose={() => setMenuOpen(false)}
+            />
+
+            <Link
+              href="#about"
+              onClick={() => setMenuOpen(false)}
+              className="text-gray-200 font-medium hover:text-white transition-colors py-3 border-b border-white/10 text-sm"
+            >
+              About
+            </Link>
+            <Link
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="text-gray-200 font-medium hover:text-white transition-colors py-3 border-b border-white/10 text-sm"
+            >
+              Contact
+            </Link>
+
+            {/* Language */}
+            <div className="py-3 border-b border-white/10 flex items-center gap-3">
+              <Globe size={15} className="text-gray-400" />
+              <span className="text-gray-400 text-sm">Language:</span>
+              {(['en', 'es'] as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`flex items-center gap-1 px-3 py-1 rounded-lg text-sm font-semibold transition-colors ${
+                    lang === l ? 'bg-orange-500 text-white' : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <span>{l === 'en' ? '🇺🇸' : '🇲🇽'}</span>
+                  <span className="uppercase">{l}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-3 pt-4">
+              <a
+                href="tel:+18569042097"
+                className="flex items-center justify-center gap-2 bg-white text-[#0D1929] font-semibold px-4 py-3 rounded-lg text-sm"
+              >
+                <Phone size={15} />
+                (856) 904-2097
+              </a>
+              <Link
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="text-center bg-orange-500 text-white font-bold px-5 py-3 rounded-lg text-sm"
+              >
+                Free Estimate
+              </Link>
+            </div>
+          </div>
+        )}
+      </header>
+    </div>
   )
 }

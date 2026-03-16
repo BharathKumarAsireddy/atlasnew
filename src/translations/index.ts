@@ -15,12 +15,12 @@ export const translations = {
       closeMenu: 'Close menu',
       openMenu: 'Open menu',
       servicesList: [
-        { label: 'Emergency Plumbing',   desc: '24/7 rapid response'    },
-        { label: 'Drain Cleaning',        desc: 'Clear blockages fast'   },
-        { label: 'Water Heater',          desc: 'Tankless & traditional' },
-        { label: 'Leak Detection',        desc: 'Advanced technology'    },
-        { label: 'Sewer Line Repair',     desc: 'Minimal disruption'     },
-        { label: 'Commercial Plumbing',   desc: 'All facility sizes'     },
+        { label: 'Emergency Leak Repair',  desc: '24/7 rapid response'         },
+        { label: 'Drain Cleaning',         desc: 'Clear blockages fast'        },
+        { label: 'Sewer Line Services',    desc: 'Scope, repair & replacement' },
+        { label: 'Water Heater Services',  desc: 'Replacement & tankless'      },
+        { label: 'Water Filtration',       desc: 'Ultra-pure drinking water'   },
+        { label: 'Commercial Plumbing',    desc: 'All facility sizes'          },
       ],
     },
     hero: {
@@ -31,7 +31,7 @@ export const translations = {
       subheadline:
         'From burst pipes to full installations — Atlas Plumbing arrives fast, fixes it right, and backs every job with a satisfaction guarantee.',
       ratingLabel: '— 200+ Verified Reviews',
-      callNow: 'Call Now — (555) 123-4567',
+      callNow: 'Call Now — (856) 904-2097',
       getFreeEstimate: 'Get Free Estimate',
       trustItems: ['Same-Day Service', '100% Satisfaction', 'Upfront Pricing'],
       stats: [
@@ -47,38 +47,38 @@ export const translations = {
         'From routine maintenance to complex installations, we handle every plumbing challenge with skill and care.',
       cards: [
         {
-          title: 'Emergency Plumbing',
+          title: 'Emergency Leak Repair',
           description:
-            'Burst pipes, flooding, or sudden leaks — our team is on call 24/7 to handle any plumbing emergency fast.',
+            'Burst pipes, active leaks, or flooding — our team is on call 24/7. We arrive fast, stop the damage, and restore your plumbing right.',
         },
         {
           title: 'Drain Cleaning',
           description:
-            'Slow or clogged drains? We use professional-grade equipment to clear blockages and restore proper flow.',
+            'Slow or clogged drains cleared with professional-grade equipment. The best first step to healthier plumbing throughout your home.',
         },
         {
-          title: 'Water Heater Installation',
+          title: 'Sewer Line Services',
           description:
-            'Expert installation, repair, and replacement of tankless and traditional water heaters for reliable hot water.',
+            'Sewer scope inspections, root-intrusion repairs, and full sewer line replacements. We find the problem fast and fix it right. 0% financing available.',
         },
         {
-          title: 'Leak Detection',
+          title: 'Water Heater Services',
           description:
-            'Advanced leak detection technology to locate hidden leaks behind walls and underground without unnecessary damage.',
+            'Traditional water heater replacement and tankless upgrades. Go tankless and qualify for a green energy tax credit. 0% financing available.',
         },
         {
-          title: 'Sewer Line Repair',
+          title: 'Water Filtration Systems',
           description:
-            'From root intrusions to collapsed pipes, we diagnose and repair sewer line issues with minimal disruption.',
+            'Whole-home and under-sink filtration systems that deliver ultra-pure drinking water. Great investment, easy to love.',
         },
         {
           title: 'Commercial Plumbing',
           description:
-            'Full-service plumbing solutions for businesses, restaurants, and commercial facilities of all sizes.',
+            'Full-service plumbing for businesses, restaurants, and commercial facilities of all sizes — done with precision and professionalism.',
         },
       ],
       emergencyHeading: "Plumbing emergency? We're available 24/7.",
-      emergencySubtext: 'Call now for immediate, professional assistance — no waiting.',
+      emergencySubtext: '0% financing available on water heaters, sewer replacements & more. Call now — no waiting.',
     },
     whyChooseUs: {
       eyebrow: 'Why Atlas Plumbing',
@@ -148,24 +148,40 @@ export const translations = {
         serviceRequired: 'Please select a service',
       },
       serviceOptions: [
-        'Emergency Plumbing',
+        'Emergency Leak Repair',
         'Drain Cleaning',
-        'Water Heater Installation',
-        'Leak Detection',
+        'Sewer Scope / Inspection',
         'Sewer Line Repair',
+        'Sewer Line Replacement',
+        'Water Heater Replacement',
+        'Tankless Water Heater Upgrade',
+        'Water Filtration System',
         'Commercial Plumbing',
+        'New Construction Plumbing',
+        'Backflow Prevention',
+        'Preventative Maintenance Plan',
+        'Whole House Repipe',
+        'Water Service Replacement',
         'Other',
       ],
       serviceGroups: [
         {
           group: 'Plumbing',
           options: [
-            'Emergency Plumbing',
+            'Emergency Leak Repair',
             'Drain Cleaning',
-            'Water Heater Installation',
-            'Leak Detection',
+            'Sewer Scope / Inspection',
             'Sewer Line Repair',
+            'Sewer Line Replacement',
+            'Water Heater Replacement',
+            'Tankless Water Heater Upgrade',
+            'Water Filtration System',
             'Commercial Plumbing',
+            'New Construction Plumbing',
+            'Backflow Prevention',
+            'Preventative Maintenance Plan',
+            'Whole House Repipe',
+            'Water Service Replacement',
           ],
         },
         {
@@ -289,11 +305,11 @@ export const translations = {
         { label: 'Contact',  href: '#contact' },
       ],
       services: [
-        'Emergency Plumbing',
+        'Emergency Leak Repair',
         'Drain Cleaning',
-        'Water Heater Installation',
-        'Leak Detection',
-        'Sewer Line Repair',
+        'Sewer Line Repair & Replacement',
+        'Water Heater Replacement',
+        'Water Filtration Systems',
         'Commercial Plumbing',
       ],
     },
@@ -307,7 +323,7 @@ export const translations = {
         headline3: 'in New Jersey',
         subheadline:
           'Keep your home warm all winter long. Atlas Plumbing installs, repairs, and maintains every type of heating system — furnaces, boilers, heat pumps, and more.',
-        callNow: 'Call Now — (555) 123-4567',
+        callNow: 'Call Now — (856) 904-2097',
         freeEstimate: 'Free Estimate',
       },
       intro: {
@@ -385,7 +401,7 @@ export const translations = {
         headline3: 'in New Jersey',
         subheadline:
           'Stay cool all summer long. Atlas Plumbing installs, repairs, and maintains every type of air conditioning system — from mini-splits to whole-home central air.',
-        callNow: 'Call Now — (555) 123-4567',
+        callNow: 'Call Now — (856) 904-2097',
         freeEstimate: 'Free Estimate',
       },
       intro: {
@@ -463,7 +479,7 @@ export const translations = {
         headline3: 'in New Jersey',
         subheadline:
           'From emergency repairs to complete system installations — Atlas Plumbing delivers fast, reliable plumbing you can count on.',
-        callNow: 'Call Now — (555) 123-4567',
+        callNow: 'Call Now — (856) 904-2097',
         freeEstimate: 'Free Estimate',
       },
       intro: {
@@ -474,39 +490,39 @@ export const translations = {
       callForService: 'Call for This Service',
       services: [
         {
-          title: 'Residential Plumbing Repairs',
+          title: 'Sewer Line Services',
           description:
-            'From a dripping kitchen faucet to a burst pipe under the sink, our certified plumbers handle every residential repair with speed and precision. We arrive fully equipped so most jobs are completed in a single visit — no repeat trips, no disruption to your daily routine.',
-          badge: 'Residential Service',
-          features: ['Same-day service for most repairs', 'Fully stocked service trucks', 'Kitchen, bathroom & utility repairs', 'No overtime or after-hours fees'],
+            'From a routine sewer scope inspection to full sewer line repair or replacement, we handle it all. We use camera inspections to find the exact problem — root intrusions, cracks, or collapsed sections — and give you a clear, upfront quote. 0% financing available on replacements.',
+          badge: 'Sewer Services',
+          features: ['Sewer scope & video inspections', 'Root intrusion & crack repair', 'Full sewer line replacement', '0% financing available'],
         },
         {
-          title: 'Commercial Plumbing Systems',
+          title: 'Water Heater Replacement & Tankless Upgrades',
           description:
-            'Large-scale commercial facilities demand precision-engineered plumbing. Our team designs, installs, and maintains complex pipe networks for office buildings, industrial facilities, and multi-unit properties — ensuring code compliance, maximum efficiency, and zero downtime for your business.',
-          badge: 'Commercial Service',
-          features: ['Full system design & installation', 'Code-compliant for all facility types', 'Preventative maintenance contracts', 'Minimal business disruption'],
+            'Whether your old tank unit has given out or you\'re ready to upgrade to a tankless system, we handle the full replacement fast. Tankless water heaters qualify for a federal green energy tax credit — and we offer 0% financing so you can get it done today without the upfront cost.',
+          badge: 'Water Heater',
+          features: ['Traditional & tankless water heaters', 'Federal green energy tax credit eligible', '0% financing available', 'Same-day replacement available'],
         },
         {
-          title: 'Pipe Installation & Repair',
+          title: 'Water Filtration Systems',
           description:
-            'Whether you need new pipes run for a renovation or an urgent repair on an aging system, we handle all pipe types — copper, PVC, PEX, and galvanized steel. Our technicians diagnose the root cause of every issue and deliver a permanent fix, not a temporary patch.',
-          badge: 'Pipe Services',
-          features: ['All pipe materials & sizes covered', 'New construction & remodel installs', 'Emergency repair — 24/7 response', 'Long-lasting, code-approved work'],
+            'Everyone wants ultra-clean drinking water. We install whole-home and under-sink water filtration systems that remove contaminants, improve taste, and protect your plumbing. It\'s one of the best investments a homeowner can make — and one of the easiest upsells.',
+          badge: 'Water Filtration',
+          features: ['Whole-home & under-sink systems', 'Removes chlorine, lead & contaminants', 'Improves taste & protects pipes', 'Low maintenance — we handle everything'],
         },
         {
-          title: 'Fixture Installation & Upgrades',
+          title: 'Commercial & New Construction Plumbing',
           description:
-            'Upgrade your home or business with modern, water-efficient fixtures installed by professionals. From sleek kitchen faucets to high-performance showerheads and commercial-grade taps, we ensure every fixture is leak-free, properly pressured, and working perfectly from day one.',
-          badge: 'Fixture Upgrades',
-          features: ['Kitchen, bathroom & utility fixtures', 'Water-efficient upgrades available', 'Proper pressure & flow balancing', 'All major brands installed'],
+            'Commercial plumbing is our highest-margin work, and we do it right. From restaurants and office buildings to full new construction projects, we design, permit, and install complete plumbing systems on time and on budget. We also handle backflow prevention for all commercial properties.',
+          badge: 'Commercial Plumbing',
+          features: ['Restaurants, offices & multi-unit buildings', 'New construction from rough-in to finish', 'Backflow prevention & certification', 'Preventative maintenance contracts'],
         },
         {
-          title: 'Water Pressure & Pump Systems',
+          title: 'Whole House Repipe & Water Service',
           description:
-            'Low water pressure and failing pump systems can cripple both homes and businesses. We install, service, and repair all types of water pumps and pressure systems — including booster pumps, well pumps, and industrial-grade configurations — restoring reliable water flow throughout your property.',
-          badge: 'Pump Systems',
-          features: ['Booster & well pump installation', 'Pressure diagnostics & balancing', 'Industrial & residential systems', 'Preventative maintenance plans'],
+            'Aging galvanized pipes, persistent leaks, or discolored water are signs your home needs a full repipe. We also replace deteriorating water service lines from the street to your home. Add our annual preventative maintenance plan to protect your investment for years to come.',
+          badge: 'Full System Services',
+          features: ['Whole house repipe (copper & PEX)', 'Water service line replacement', 'Annual preventative maintenance plans', 'Emergency leak repair — 24/7'],
         },
       ],
       whyUs: {
@@ -539,12 +555,12 @@ export const translations = {
       closeMenu: 'Cerrar menú',
       openMenu: 'Abrir menú',
       servicesList: [
-        { label: 'Plomería de Emergencia',     desc: 'Respuesta rápida 24/7'    },
-        { label: 'Limpieza de Drenajes',       desc: 'Desatascos rápidos'       },
-        { label: 'Calentadores de Agua',       desc: 'Sin tanque y tradicional' },
-        { label: 'Detección de Fugas',         desc: 'Tecnología avanzada'      },
-        { label: 'Reparación de Alcantarillas',desc: 'Mínima disrupción'        },
-        { label: 'Plomería Comercial',         desc: 'Todos los tamaños'        },
+        { label: 'Reparación de Fugas',           desc: 'Respuesta rápida 24/7'              },
+        { label: 'Limpieza de Drenajes',          desc: 'Desatascos rápidos'                 },
+        { label: 'Servicios de Alcantarilla',     desc: 'Inspección, reparación y reemplazo' },
+        { label: 'Calentadores de Agua',          desc: 'Reemplazo y sin tanque'             },
+        { label: 'Filtración de Agua',            desc: 'Agua potable ultra-pura'            },
+        { label: 'Plomería Comercial',            desc: 'Todos los tamaños'                  },
       ],
     },
     hero: {
@@ -555,7 +571,7 @@ export const translations = {
       subheadline:
         'Desde tuberías rotas hasta instalaciones completas — Atlas Plumbing llega rápido, lo arregla bien y respalda cada trabajo con garantía de satisfacción.',
       ratingLabel: '— 200+ Reseñas Verificadas',
-      callNow: 'Llamar Ahora — (555) 123-4567',
+      callNow: 'Llamar Ahora — (856) 904-2097',
       getFreeEstimate: 'Obtener Presupuesto Gratis',
       trustItems: ['Servicio el Mismo Día', '100% Satisfacción', 'Precios Transparentes'],
       stats: [
@@ -571,38 +587,38 @@ export const translations = {
         'Desde mantenimiento rutinario hasta instalaciones complejas, manejamos cada desafío de plomería con habilidad y cuidado.',
       cards: [
         {
-          title: 'Plomería de Emergencia',
+          title: 'Reparación de Fugas de Emergencia',
           description:
-            'Tuberías rotas, inundaciones o fugas repentinas — nuestro equipo está disponible 24/7 para manejar cualquier emergencia de plomería rápidamente.',
+            'Tuberías rotas, fugas activas o inundaciones — estamos disponibles 24/7. Llegamos rápido, detenemos el daño y restauramos su plomería.',
         },
         {
           title: 'Limpieza de Drenajes',
           description:
-            '¿Drenajes lentos o tapados? Usamos equipo profesional para limpiar obstrucciones y restaurar el flujo adecuado.',
+            '¿Drenajes lentos o tapados? Usamos equipo profesional para limpiar cualquier obstrucción — el mejor primer paso para una plomería más saludable.',
         },
         {
-          title: 'Instalación de Calentadores',
+          title: 'Servicios de Alcantarilla',
           description:
-            'Instalación, reparación y reemplazo experto de calentadores de agua sin tanque y tradicionales para agua caliente confiable.',
+            'Inspecciones con cámara, reparación de intrusiones de raíces y reemplazo completo de líneas de alcantarilla. Financiamiento al 0% disponible.',
         },
         {
-          title: 'Detección de Fugas',
+          title: 'Servicios de Calentador de Agua',
           description:
-            'Tecnología avanzada para localizar fugas ocultas detrás de paredes y bajo tierra sin daños innecesarios.',
+            'Reemplazo de calentadores tradicionales y modernización a sistemas sin tanque. Califique para crédito fiscal de energía verde. Financiamiento al 0% disponible.',
         },
         {
-          title: 'Reparación de Alcantarillas',
+          title: 'Sistemas de Filtración de Agua',
           description:
-            'Desde intrusiones de raíces hasta tuberías colapsadas, diagnosticamos y reparamos problemas de alcantarilla con mínima disrupción.',
+            'Sistemas de filtración para toda la casa o bajo el fregadero que entregan agua potable ultra-pura. Gran inversión, fácil de amar.',
         },
         {
           title: 'Plomería Comercial',
           description:
-            'Soluciones completas de plomería para negocios, restaurantes e instalaciones comerciales de todos los tamaños.',
+            'Servicios completos de plomería para negocios, restaurantes e instalaciones comerciales de todos los tamaños — con precisión y profesionalismo.',
         },
       ],
       emergencyHeading: '¿Emergencia de plomería? Estamos disponibles 24/7.',
-      emergencySubtext: 'Llame ahora para asistencia profesional inmediata — sin esperas.',
+      emergencySubtext: 'Financiamiento al 0% disponible en calentadores, alcantarillas y más. Llame ahora — sin esperas.',
     },
     whyChooseUs: {
       eyebrow: 'Por Qué Atlas Plumbing',
@@ -673,24 +689,40 @@ export const translations = {
         serviceRequired: 'Por favor seleccione un servicio',
       },
       serviceOptions: [
-        'Plomería de Emergencia',
+        'Reparación de Fugas de Emergencia',
         'Limpieza de Drenajes',
-        'Instalación de Calentadores',
-        'Detección de Fugas',
-        'Reparación de Alcantarillas',
+        'Inspección de Alcantarilla (Sewer Scope)',
+        'Reparación de Línea de Alcantarilla',
+        'Reemplazo de Línea de Alcantarilla',
+        'Reemplazo de Calentador de Agua',
+        'Modernización a Calentador Sin Tanque',
+        'Sistema de Filtración de Agua',
         'Plomería Comercial',
+        'Plomería para Nueva Construcción',
+        'Prevención de Reflujo (Backflow)',
+        'Plan de Mantenimiento Preventivo',
+        'Re-tubería Completa de la Casa',
+        'Reemplazo de Servicio de Agua',
         'Otro',
       ],
       serviceGroups: [
         {
           group: 'Plomería',
           options: [
-            'Plomería de Emergencia',
+            'Reparación de Fugas de Emergencia',
             'Limpieza de Drenajes',
-            'Instalación de Calentadores',
-            'Detección de Fugas',
-            'Reparación de Alcantarillas',
+            'Inspección de Alcantarilla (Sewer Scope)',
+            'Reparación de Línea de Alcantarilla',
+            'Reemplazo de Línea de Alcantarilla',
+            'Reemplazo de Calentador de Agua',
+            'Modernización a Calentador Sin Tanque',
+            'Sistema de Filtración de Agua',
             'Plomería Comercial',
+            'Plomería para Nueva Construcción',
+            'Prevención de Reflujo (Backflow)',
+            'Plan de Mantenimiento Preventivo',
+            'Re-tubería Completa de la Casa',
+            'Reemplazo de Servicio de Agua',
           ],
         },
         {
@@ -814,11 +846,11 @@ export const translations = {
         { label: 'Contacto',  href: '#contact' },
       ],
       services: [
-        'Plomería de Emergencia',
+        'Reparación de Fugas de Emergencia',
         'Limpieza de Drenajes',
-        'Instalación de Calentadores',
-        'Detección de Fugas',
-        'Reparación de Alcantarillas',
+        'Reparación y Reemplazo de Alcantarilla',
+        'Reemplazo de Calentador de Agua',
+        'Sistemas de Filtración de Agua',
         'Plomería Comercial',
       ],
     },
@@ -832,7 +864,7 @@ export const translations = {
         headline3: 'en Nueva Jersey',
         subheadline:
           'Mantenga su hogar cálido durante todo el invierno. Atlas Plumbing instala, repara y mantiene todo tipo de sistemas de calefacción — calefactores, calderas, bombas de calor y más.',
-        callNow: 'Llamar Ahora — (555) 123-4567',
+        callNow: 'Llamar Ahora — (856) 904-2097',
         freeEstimate: 'Presupuesto Gratis',
       },
       intro: {
@@ -910,7 +942,7 @@ export const translations = {
         headline3: 'en Nueva Jersey',
         subheadline:
           'Manténgase fresco durante todo el verano. Atlas Plumbing instala, repara y mantiene todo tipo de sistemas de aire acondicionado — desde mini-splits hasta aire central para toda la casa.',
-        callNow: 'Llamar Ahora — (555) 123-4567',
+        callNow: 'Llamar Ahora — (856) 904-2097',
         freeEstimate: 'Presupuesto Gratis',
       },
       intro: {
@@ -988,7 +1020,7 @@ export const translations = {
         headline3: 'en Nueva Jersey',
         subheadline:
           'Desde reparaciones de emergencia hasta instalaciones completas de sistemas — Atlas Plumbing ofrece plomería rápida y confiable en la que puede contar.',
-        callNow: 'Llamar Ahora — (555) 123-4567',
+        callNow: 'Llamar Ahora — (856) 904-2097',
         freeEstimate: 'Presupuesto Gratis',
       },
       intro: {
@@ -999,39 +1031,39 @@ export const translations = {
       callForService: 'Llamar para Este Servicio',
       services: [
         {
-          title: 'Reparaciones Residenciales de Plomería',
+          title: 'Servicios de Línea de Alcantarilla',
           description:
-            'Desde un grifo de cocina que gotea hasta una tubería rota debajo del fregadero, nuestros plomeros certificados manejan cada reparación residencial con velocidad y precisión. Llegamos completamente equipados para que la mayoría de trabajos se completen en una sola visita.',
-          badge: 'Servicio Residencial',
-          features: ['Servicio el mismo día para la mayoría de reparaciones', 'Camiones de servicio completamente equipados', 'Reparaciones de cocina, baño y utilidades', 'Sin cargos por horas extra o fuera del horario'],
+            'Desde una inspección con cámara de alcantarilla hasta la reparación o reemplazo completo de la línea, lo manejamos todo. Identificamos el problema exacto — raíces, grietas o colapsos — y le damos un presupuesto claro y transparente. Financiamiento al 0% disponible en reemplazos.',
+          badge: 'Servicios de Alcantarilla',
+          features: ['Inspecciones con cámara (sewer scope)', 'Reparación de raíces y grietas', 'Reemplazo completo de línea de alcantarilla', 'Financiamiento al 0% disponible'],
         },
         {
-          title: 'Sistemas de Plomería Comercial',
+          title: 'Reemplazo de Calentador y Modernización Sin Tanque',
           description:
-            'Las instalaciones comerciales a gran escala requieren plomería de ingeniería de precisión. Nuestro equipo diseña, instala y mantiene redes de tuberías complejas para edificios de oficinas, instalaciones industriales y propiedades de múltiples unidades.',
-          badge: 'Servicio Comercial',
-          features: ['Diseño e instalación completa del sistema', 'Conforme al código para todos los tipos de instalaciones', 'Contratos de mantenimiento preventivo', 'Mínima interrupción del negocio'],
+            'Ya sea que su calentador antiguo haya fallado o esté listo para modernizarse a un sistema sin tanque, manejamos el reemplazo completo rápidamente. Los calentadores sin tanque califican para un crédito fiscal federal de energía verde — y ofrecemos financiamiento al 0% para que lo haga hoy sin costo inicial.',
+          badge: 'Calentador de Agua',
+          features: ['Calentadores tradicionales y sin tanque', 'Elegible para crédito fiscal de energía verde', 'Financiamiento al 0% disponible', 'Reemplazo disponible el mismo día'],
         },
         {
-          title: 'Instalación y Reparación de Tuberías',
+          title: 'Sistemas de Filtración de Agua',
           description:
-            'Ya sea que necesite tuberías nuevas para una renovación o una reparación urgente, manejamos todos los tipos — cobre, PVC, PEX y acero galvanizado. Nuestros técnicos diagnostican la causa raíz y brindan una solución permanente, no un parche temporal.',
-          badge: 'Servicios de Tuberías',
-          features: ['Todos los materiales y tamaños de tuberías cubiertos', 'Instalaciones para construcciones nuevas y remodelaciones', 'Reparación de emergencia — respuesta 24/7', 'Trabajo duradero y aprobado por el código'],
+            'Todos quieren agua potable ultra-pura. Instalamos sistemas de filtración para toda la casa y bajo el fregadero que eliminan contaminantes, mejoran el sabor y protegen su plomería. Es una de las mejores inversiones que puede hacer un propietario.',
+          badge: 'Filtración de Agua',
+          features: ['Sistemas para toda la casa y bajo el fregadero', 'Elimina cloro, plomo y contaminantes', 'Mejora el sabor y protege las tuberías', 'Bajo mantenimiento — nosotros nos encargamos de todo'],
         },
         {
-          title: 'Instalación y Mejora de Accesorios',
+          title: 'Plomería Comercial y Nueva Construcción',
           description:
-            'Mejore su hogar o negocio con accesorios modernos y eficientes en agua instalados por profesionales. Desde elegantes grifos de cocina hasta alcachofas de ducha de alto rendimiento, aseguramos que cada accesorio funcione perfectamente desde el primer día.',
-          badge: 'Mejoras de Accesorios',
-          features: ['Accesorios de cocina, baño y utilidades', 'Mejoras eficientes en agua disponibles', 'Equilibrio adecuado de presión y flujo', 'Todas las marcas principales instaladas'],
+            'La plomería comercial es nuestro trabajo de mayor margen y lo hacemos bien. Desde restaurantes y edificios de oficinas hasta proyectos de nueva construcción, diseñamos, obtenemos permisos e instalamos sistemas completos a tiempo y dentro del presupuesto. También manejamos la prevención de reflujo.',
+          badge: 'Plomería Comercial',
+          features: ['Restaurantes, oficinas y edificios de múltiples unidades', 'Nueva construcción desde el inicio hasta el acabado', 'Prevención y certificación de reflujo (backflow)', 'Contratos de mantenimiento preventivo'],
         },
         {
-          title: 'Presión de Agua y Sistemas de Bomba',
+          title: 'Re-tubería Completa y Servicio de Agua',
           description:
-            'La baja presión del agua y los sistemas de bomba defectuosos pueden paralizar hogares y negocios. Instalamos, mantenemos y reparamos todo tipo de bombas de agua — bombas de refuerzo, bombas de pozo y configuraciones de grado industrial.',
-          badge: 'Sistemas de Bomba',
-          features: ['Instalación de bombas de refuerzo y de pozo', 'Diagnóstico y equilibrio de presión', 'Sistemas industriales y residenciales', 'Planes de mantenimiento preventivo'],
+            'Las tuberías galvanizadas envejecidas, las fugas persistentes o el agua descolorida son señales de que su casa necesita una re-tubería completa. También reemplazamos líneas de servicio de agua deterioradas. Agregue nuestro plan de mantenimiento preventivo anual para proteger su inversión.',
+          badge: 'Servicios Completos del Sistema',
+          features: ['Re-tubería completa de la casa (cobre y PEX)', 'Reemplazo de línea de servicio de agua', 'Planes de mantenimiento preventivo anual', 'Reparación de fugas de emergencia — 24/7'],
         },
       ],
       whyUs: {

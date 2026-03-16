@@ -2,19 +2,19 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Phone, Zap, Waves, Flame, Search, GitBranch, Building2 } from 'lucide-react'
+import { Phone, AlertTriangle, Waves, Flame, GitBranch, Droplets, Building2 } from 'lucide-react'
 import { useInView } from '@/hooks/useInView'
 import { useLanguage } from '@/context/LanguageContext'
 
-const serviceIcons = [Zap, Waves, Flame, Search, GitBranch, Building2]
+const serviceIcons = [AlertTriangle, Waves, GitBranch, Flame, Droplets, Building2]
 
 const serviceImages = [
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',  alt: 'Emergency plumber repairing a burst pipe',            anim: '-translate-x-full group-hover:translate-x-0' },
-  { src: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80', alt: 'Plumber performing professional drain cleaning',        anim: 'translate-y-full group-hover:translate-y-0'  },
-  { src: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80', alt: 'Professional water heater installation',               anim: 'translate-x-full group-hover:translate-x-0'  },
-  { src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80', alt: 'Technician using advanced leak detection equipment',   anim: '-translate-y-full group-hover:translate-y-0' },
-  { src: 'https://images.unsplash.com/photo-1581093458791-9d42c28a6e41?w=600&q=80', alt: 'Sewer line excavation and repair work',                anim: '-translate-x-full group-hover:translate-x-0' },
-  { src: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80', alt: 'Commercial plumbing installation in a large facility', anim: 'translate-x-full group-hover:translate-x-0'  },
+  { src: '/plumbing/emergency-plumbing.webp',    alt: 'Emergency plumber repairing a burst pipe',            anim: '-translate-x-full group-hover:translate-x-0' },
+  { src: '/plumbing/drain-cleaning.avif',        alt: 'Plumber performing professional drain cleaning',        anim: 'translate-y-full group-hover:translate-y-0'  },
+  { src: '/plumbing/sewer-line.jpg',             alt: 'Sewer line inspection and repair work',                anim: 'translate-x-full group-hover:translate-x-0'  },
+  { src: '/plumbing/water-heater-install.webp',  alt: 'Professional tankless water heater installation',      anim: '-translate-y-full group-hover:translate-y-0' },
+  { src: '/plumbing/leak-detection.png',         alt: 'Professional leak detection service',                  anim: '-translate-x-full group-hover:translate-x-0' },
+  { src: '/plumbing/commercial-plumbing.png',    alt: 'Commercial plumbing installation in a large facility', anim: 'translate-x-full group-hover:translate-x-0'  },
 ]
 
 const delays = ['delay-0', 'delay-100', 'delay-200', 'delay-0', 'delay-100', 'delay-200']
@@ -58,8 +58,8 @@ export default function Services() {
                 href="/plumbing"
                 key={card.title}
                 style={{ transitionDelay: `${(i % 3) * 120}ms` }}
-                className={`relative bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group ${delays[i]} ${
-                  gridIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                className={`relative bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group ${delays[i]} ${
+                  gridIn ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
                 }`}
               >
                 {/* Background image — slides in on hover */}
@@ -112,11 +112,11 @@ export default function Services() {
             </p>
           </div>
           <a
-            href="tel:+15551234567"
+            href="tel:+18569042097"
             className="relative z-10 flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-4 rounded-xl transition-all whitespace-nowrap flex-shrink-0 shadow-lg hover:-translate-y-0.5 animate-pulse-glow"
           >
             <Phone size={18} />
-            (555) 123-4567
+            (856) 904-2097
           </a>
         </div>
       </div>
