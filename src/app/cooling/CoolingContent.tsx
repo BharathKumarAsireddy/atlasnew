@@ -11,12 +11,12 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const serviceIcons = ['Wind', 'Wrench', 'Zap', 'Waves', 'Droplets', 'Flame']
 const serviceImgs = [
-  'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80',
-  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-  'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80',
-  'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
-  'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&q=80',
-  'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+  '/cooling/ac-installation.png',
+  '/cooling/ac-repair.png',
+  '/cooling/ductless-mini-splits.png',
+  '/cooling/central-air-system.png',
+  '/cooling/indoor-air-quality.png',
+  '/cooling/emergency-ac-services.png',
 ]
 const serviceAlts = [
   'AC installation technician',
@@ -43,7 +43,7 @@ export default function CoolingContent() {
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute ken-burns" style={{ inset: '-8%' }}>
               <Image
-                src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1920&q=85"
+                src="/cooling/ac-installation.png"
                 alt="HVAC cooling technician at work"
                 fill
                 className="object-cover object-center"
@@ -150,7 +150,7 @@ export default function CoolingContent() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
                 <div className="absolute ken-burns" style={{ inset: '-8%' }}>
                   <Image
-                    src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&q=80"
+                    src="/cooling/central-air-system.png"
                     alt="Atlas cooling technician"
                     fill
                     className="object-cover"

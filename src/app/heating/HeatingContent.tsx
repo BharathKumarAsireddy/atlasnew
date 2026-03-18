@@ -11,12 +11,12 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const serviceIcons = ['Flame', 'Thermometer', 'Zap', 'Waves', 'Wrench', 'Settings']
 const serviceImgs = [
-  'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80',
-  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-  'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80',
-  'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
-  'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&q=80',
-  'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+  '/heating/furnace-installation.png',
+  '/heating/boiler-services.png',
+  '/heating/heat-pump-system.png',
+  '/heating/radiant-heating.png',
+  '/heating/heating-repair.png',
+  '/heating/annual-tune-up.png',
 ]
 const serviceAlts = [
   'Furnace installation',
@@ -43,7 +43,7 @@ export default function HeatingContent() {
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute ken-burns" style={{ inset: '-8%' }}>
               <Image
-                src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1920&q=85"
+                src="/heating/furnace-installation.png"
                 alt="Heating system installation"
                 fill
                 className="object-cover object-center"
