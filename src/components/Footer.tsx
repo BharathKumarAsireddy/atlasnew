@@ -39,7 +39,7 @@ export default function Footer() {
       </div>
 
       {/* Orange accent line at top */}
-      <div className="h-1 bg-orange-500" />
+      <div className="h-1 bg-brand-500" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -52,7 +52,7 @@ export default function Footer() {
                 alt="Atlas Plumbing"
                 width={160}
                 height={54}
-                className="object-contain"
+                className="object-contain mix-blend-screen"
               />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -64,7 +64,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="w-9 h-9 bg-white/10 hover:bg-orange-500 rounded-full flex items-center justify-center transition-colors"
+                className="w-9 h-9 bg-white/10 hover:bg-brand-500 rounded-full flex items-center justify-center transition-colors"
               >
                 <Facebook size={16} />
               </a>
@@ -73,7 +73,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="w-9 h-9 bg-white/10 hover:bg-orange-500 rounded-full flex items-center justify-center transition-colors"
+                className="w-9 h-9 bg-white/10 hover:bg-brand-500 rounded-full flex items-center justify-center transition-colors"
               >
                 <Instagram size={16} />
               </a>
@@ -94,7 +94,7 @@ export default function Footer() {
                 { label: 'Contact',   href: '#contact' },
               ].map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-slate-400 hover:text-orange-400 text-sm transition-colors">
+                  <Link href={link.href} className="text-slate-400 hover:text-brand-400 text-sm transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -115,7 +115,7 @@ export default function Footer() {
                 'Leak Detection',
               ].map((service) => (
                 <li key={service}>
-                  <Link href="#services" className="text-slate-400 hover:text-orange-400 text-sm transition-colors">
+                  <Link href="#services" className="text-slate-400 hover:text-brand-400 text-sm transition-colors">
                     {service}
                   </Link>
                 </li>
@@ -129,18 +129,18 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a href="tel:+18569042097" className="flex items-start gap-3 text-slate-400 hover:text-white text-sm transition-colors">
-                  <Phone size={16} className="flex-shrink-0 mt-0.5 text-orange-400" />
+                  <Phone size={16} className="flex-shrink-0 mt-0.5 text-brand-400" />
                   (856) 904-2097
                 </a>
               </li>
               <li>
                 <a href="mailto:info@atlasplumbing.com" className="flex items-start gap-3 text-slate-400 hover:text-white text-sm transition-colors">
-                  <Mail size={16} className="flex-shrink-0 mt-0.5 text-orange-400" />
+                  <Mail size={16} className="flex-shrink-0 mt-0.5 text-brand-400" />
                   info@atlasplumbing.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-slate-400 text-sm">
-                <MapPin size={16} className="flex-shrink-0 mt-0.5 text-orange-400" />
+                <MapPin size={16} className="flex-shrink-0 mt-0.5 text-brand-400" />
                 <span>
                   125 Patriots Ridge Drive<br />
                   Deptford, New Jersey 08096
@@ -150,7 +150,7 @@ export default function Footer() {
 
             <a
               href="tel:+18569042097"
-              className="mt-6 inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors"
+              className="mt-6 inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors"
             >
               <Phone size={14} />
               {fo.emergencyLine}

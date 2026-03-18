@@ -52,18 +52,18 @@ export default function HeatingContent() {
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-[#0D1929]/92 via-[#0D1929]/75 to-[#0D1929]/40" />
-            <div className="absolute bottom-0 left-0 w-[40vw] h-[30vh] bg-orange-500/10 blur-3xl rounded-full" />
+            <div className="absolute bottom-0 left-0 w-[40vw] h-[30vh] bg-brand-500/10 blur-3xl rounded-full" />
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 bg-orange-500/15 border border-orange-400/40 text-orange-300 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 bg-brand-500/15 border border-brand-400/40 text-brand-300 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
                 <Flame size={14} />
                 {hp.hero.badge}
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
                 {hp.hero.headline1}<br />
-                <span className="text-orange-400">{hp.hero.headline2}</span><br />
+                <span className="text-brand-400">{hp.hero.headline2}</span><br />
                 {hp.hero.headline3}
               </h1>
               <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-lg">
@@ -79,7 +79,7 @@ export default function HeatingContent() {
                 </a>
                 <Link
                   href="#contact"
-                  className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-7 py-4 rounded-xl text-base transition-all shadow-lg hover:-translate-y-0.5"
+                  className="flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-bold px-7 py-4 rounded-xl text-base transition-all shadow-lg hover:-translate-y-0.5"
                 >
                   {hp.hero.freeEstimate}
                   <ArrowRight size={16} />
@@ -92,7 +92,7 @@ export default function HeatingContent() {
         {/* ── Section Intro ─────────────────────────────────────────────────── */}
         <section className="py-16 bg-white text-center">
           <div className="max-w-3xl mx-auto px-6">
-            <span className="text-orange-500 font-semibold text-sm uppercase tracking-widest">{hp.intro.eyebrow}</span>
+            <span className="text-brand-500 font-semibold text-sm uppercase tracking-widest">{hp.intro.eyebrow}</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1B2A4A] mt-2 mb-4">
               {hp.intro.heading}
             </h2>
@@ -132,13 +132,13 @@ export default function HeatingContent() {
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <div className="absolute bottom-4 left-4 bg-orange-500 text-white text-sm font-bold px-4 py-2 rounded-xl">
+                <div className="absolute bottom-4 left-4 bg-brand-500 text-white text-sm font-bold px-4 py-2 rounded-xl">
                   {hp.whyUs.certBadge}
                 </div>
               </div>
 
               <div>
-                <span className="text-orange-400 font-semibold text-sm uppercase tracking-widest">{hp.whyUs.eyebrow}</span>
+                <span className="text-brand-400 font-semibold text-sm uppercase tracking-widest">{hp.whyUs.eyebrow}</span>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-6">
                   {hp.whyUs.heading}
                 </h2>
@@ -150,7 +150,7 @@ export default function HeatingContent() {
                     const Icon = whyIcons[i]
                     return (
                       <div key={title} className="flex gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center shadow-md">
+                        <div className="flex-shrink-0 w-12 h-12 bg-brand-500 rounded-xl flex items-center justify-center shadow-md">
                           <Icon size={22} className="text-white" />
                         </div>
                         <div>

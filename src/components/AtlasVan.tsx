@@ -97,8 +97,8 @@ export default function AtlasVan({ className }: { className?: string }) {
       {/* Rear tail-light strip */}
       <rect x="795" y="170" width="4" height="110" rx="2" fill="#dc2626" opacity="0.8" />
 
-      {/* ── Orange accent stripe ── */}
-      <rect x="180" y="248" width="618" height="24" fill="#F97316" />
+      {/* ── Gold accent stripe ── */}
+      <rect x="180" y="248" width="618" height="24" fill="#D4AF37" />
       {/* Stripe sheen */}
       <rect x="180" y="248" width="120" height="24" fill="white" opacity="0.07" />
 
@@ -107,11 +107,11 @@ export default function AtlasVan({ className }: { className?: string }) {
       {/* Wrench + water-drop icon mark (left of text) */}
       <g transform="translate(287, 198)">
         {/* Wrench handle */}
-        <rect x="-4" y="-20" width="8" height="26" rx="3" fill="#F97316" />
+        <rect x="-4" y="-20" width="8" height="26" rx="3" fill="#D4AF37" />
         {/* Wrench head (oval) */}
-        <ellipse cx="0" cy="-20" rx="9" ry="6" fill="none" stroke="#F97316" strokeWidth="3.5" />
+        <ellipse cx="0" cy="-20" rx="9" ry="6" fill="none" stroke="#D4AF37" strokeWidth="3.5" />
         {/* Wrench foot */}
-        <rect x="-5" y="4" width="10" height="5" rx="2" fill="#F97316" />
+        <rect x="-5" y="4" width="10" height="5" rx="2" fill="#D4AF37" />
         {/* Water droplet */}
         <path
           d="M 24,-24 Q 24,-35 16,-40 Q 8,-35 8,-24 Q 8,-14 16,-11 Q 24,-14 24,-24 Z"

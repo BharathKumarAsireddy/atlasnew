@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 {/* Orange accent overlay strip */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-orange-500" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-brand-500" />
               </div>
 
               {/* Top-right small image */}
@@ -70,9 +70,9 @@ export default function WhyChooseUs() {
                 <div className="absolute inset-0 bg-[#1B2A4A]/30 group-hover:bg-[#1B2A4A]/10 transition-colors duration-300" />
 
                 {/* Experience badge */}
-                <div className="absolute bottom-3 left-3 bg-orange-500 text-white rounded-xl p-3 shadow-xl animate-float">
+                <div className="absolute bottom-3 left-3 bg-brand-500 text-white rounded-xl p-3 shadow-xl animate-float">
                   <div className="text-3xl font-extrabold leading-none">15+</div>
-                  <div className="text-xs text-orange-100 mt-0.5 whitespace-nowrap">{w.yearsLabel}</div>
+                  <div className="text-xs text-brand-100 mt-0.5 whitespace-nowrap">{w.yearsLabel}</div>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
               rightIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}
           >
-            <span className="text-orange-500 font-semibold text-sm uppercase tracking-widest">
+            <span className="text-brand-500 font-semibold text-sm uppercase tracking-widest">
               {w.eyebrow}
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1B2A4A] mt-2 mb-6">
@@ -106,7 +106,7 @@ export default function WhyChooseUs() {
                       rightIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                     }`}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center shadow-md hover:bg-orange-400 transition-colors">
+                    <div className="flex-shrink-0 w-12 h-12 bg-brand-500 rounded-xl flex items-center justify-center shadow-md hover:bg-brand-400 transition-colors">
                       <Icon size={22} className="text-white" />
                     </div>
                     <div>
@@ -129,11 +129,11 @@ export default function WhyChooseUs() {
             <div
               key={stat.label}
               style={{ transitionDelay: `${i * 100}ms` }}
-              className={`text-center py-8 px-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-orange-300 hover:bg-orange-50 transition-all duration-300 group cursor-default ${
+              className={`text-center py-8 px-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50 transition-all duration-300 group cursor-default ${
                 statIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="text-4xl font-extrabold text-[#1B2A4A] group-hover:text-orange-500 mb-2 transition-colors">
+              <div className="text-4xl font-extrabold text-[#1B2A4A] group-hover:text-brand-500 mb-2 transition-colors">
                 {stat.value}
               </div>
               <div className="text-gray-500 text-sm font-medium">{stat.label}</div>

@@ -18,12 +18,12 @@ export default function PrivacyPolicyPage() {
 
           {/* Page header */}
           <div className="mb-10">
-            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 bg-brand-50 border border-brand-200 text-brand-600 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
               Legal
             </div>
             <h1 className="text-4xl font-extrabold text-[#0D1929] mb-3">Privacy Policy</h1>
             <p className="text-gray-500 text-sm">Effective Date: {effectiveDate}</p>
-            <div className="mt-4 h-1 w-16 bg-orange-500 rounded-full" />
+            <div className="mt-4 h-1 w-16 bg-brand-500 rounded-full" />
           </div>
 
           <div className="prose prose-gray max-w-none space-y-8 text-gray-700 leading-relaxed">
@@ -37,8 +37,8 @@ export default function PrivacyPolicyPage() {
                 Atlas Plumbing Group LLC<br />
                 125 Patriots Ridge Drive<br />
                 Deptford, New Jersey 08096<br />
-                Phone: <a href="tel:+18569042097" className="text-orange-500 hover:underline">(856) 904-2097</a><br />
-                Email: <a href="mailto:info@atlasplumbing.com" className="text-orange-500 hover:underline">info@atlasplumbing.com</a>
+                Phone: <a href="tel:+18569042097" className="text-brand-500 hover:underline">(856) 904-2097</a><br />
+                Email: <a href="mailto:info@atlasplumbing.com" className="text-brand-500 hover:underline">info@atlasplumbing.com</a>
               </address>
             </section>
 
@@ -108,7 +108,7 @@ export default function PrivacyPolicyPage() {
                 <li>Opt out of marketing communications at any time.</li>
               </ul>
               <p className="mt-3">
-                To exercise these rights, contact us at <a href="mailto:info@atlasplumbing.com" className="text-orange-500 hover:underline">info@atlasplumbing.com</a> or call <a href="tel:+18569042097" className="text-orange-500 hover:underline">(856) 904-2097</a>.
+                To exercise these rights, contact us at <a href="mailto:info@atlasplumbing.com" className="text-brand-500 hover:underline">info@atlasplumbing.com</a> or call <a href="tel:+18569042097" className="text-brand-500 hover:underline">(856) 904-2097</a>.
               </p>
             </section>
 
@@ -131,18 +131,18 @@ export default function PrivacyPolicyPage() {
               <p>
                 If you have any questions about this Privacy Policy, please contact us:
               </p>
-              <address className="not-italic mt-3 bg-orange-50 border border-orange-100 rounded-xl px-5 py-4 text-sm">
+              <address className="not-italic mt-3 bg-brand-50 border border-brand-100 rounded-xl px-5 py-4 text-sm">
                 <strong>Atlas Plumbing Group LLC</strong><br />
                 125 Patriots Ridge Drive, Deptford, NJ 08096<br />
-                <a href="tel:+18569042097" className="text-orange-500 hover:underline">(856) 904-2097</a> &nbsp;|&nbsp;
-                <a href="mailto:info@atlasplumbing.com" className="text-orange-500 hover:underline">info@atlasplumbing.com</a>
+                <a href="tel:+18569042097" className="text-brand-500 hover:underline">(856) 904-2097</a> &nbsp;|&nbsp;
+                <a href="mailto:info@atlasplumbing.com" className="text-brand-500 hover:underline">info@atlasplumbing.com</a>
               </address>
             </section>
 
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200 flex gap-4 text-sm">
-            <Link href="/" className="text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+            <Link href="/" className="text-brand-500 hover:text-brand-600 font-semibold transition-colors">
               ← Back to Home
             </Link>
             <Link href="/terms-of-service" className="text-gray-500 hover:text-gray-700 transition-colors">

@@ -37,7 +37,7 @@ export default function Services() {
             headIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-widest">
+          <span className="text-brand-500 font-semibold text-sm uppercase tracking-widest">
             {s.eyebrow}
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1B2A4A] mt-2 mb-4">
@@ -75,16 +75,16 @@ export default function Services() {
                 </div>
 
                 {/* Orange top accent bar */}
-                <div className="relative z-10 h-1.5 bg-[#1B2A4A] group-hover:bg-orange-500 transition-colors duration-300" />
+                <div className="relative z-10 h-1.5 bg-[#1B2A4A] group-hover:bg-brand-500 transition-colors duration-300" />
 
                 <div className="relative z-10 p-8">
-                  <div className="w-14 h-14 bg-[#1B2A4A] rounded-xl flex items-center justify-center mb-5 group-hover:bg-orange-500 transition-colors duration-300 shadow-md">
+                  <div className="w-14 h-14 bg-[#1B2A4A] rounded-xl flex items-center justify-center mb-5 group-hover:bg-brand-500 transition-colors duration-300 shadow-md">
                     <Icon size={26} className="text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-[#1B2A4A] group-hover:text-white transition-colors duration-300">
                     {card.title}
                   </h3>
-                  <p className="leading-relaxed text-sm text-gray-500 group-hover:text-orange-100 transition-colors duration-300">
+                  <p className="leading-relaxed text-sm text-gray-500 group-hover:text-brand-100 transition-colors duration-300">
                     {card.description}
                   </p>
                 </div>
@@ -107,13 +107,13 @@ export default function Services() {
             <h3 className="text-white font-bold text-xl mb-1">
               {s.emergencyHeading}
             </h3>
-            <p className="text-orange-200 text-sm">
+            <p className="text-brand-200 text-sm">
               {s.emergencySubtext}
             </p>
           </div>
           <a
             href="tel:+18569042097"
-            className="relative z-10 flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-4 rounded-xl transition-all whitespace-nowrap flex-shrink-0 shadow-lg hover:-translate-y-0.5 animate-pulse-glow"
+            className="relative z-10 flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-bold px-8 py-4 rounded-xl transition-all whitespace-nowrap flex-shrink-0 shadow-lg hover:-translate-y-0.5 animate-pulse-glow"
           >
             <Phone size={18} />
             (856) 904-2097

@@ -80,7 +80,7 @@ export default function Hero() {
         {/* Overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0D1929]/92 via-[#0D1929]/75 to-[#0D1929]/40 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1929]/70 via-transparent to-[#0D1929]/40 z-10" />
-        <div className="absolute bottom-0 left-0 w-[40vw] h-[40vh] bg-orange-500/10 blur-3xl rounded-full z-10" />
+        <div className="absolute bottom-0 left-0 w-[40vw] h-[40vh] bg-brand-500/10 blur-3xl rounded-full z-10" />
 
         {/* Slide indicator dots */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
@@ -88,7 +88,7 @@ export default function Hero() {
             <button
               key={i}
               onClick={() => { if (!sliding && i !== active) { setPrev(active); setActive(i); setSliding(true); setTimeout(() => { setPrev(null); setSliding(false) }, 950) } }}
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-orange-400' : 'w-2 bg-white/40 hover:bg-white/70'}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-brand-400' : 'w-2 bg-white/40 hover:bg-white/70'}`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
@@ -101,14 +101,14 @@ export default function Hero() {
 
           {/* Left column */}
           <div>
-            <div className="hero-animate-1 inline-flex items-center gap-2 bg-orange-500/15 border border-orange-400/40 text-orange-300 text-xs font-bold px-4 py-2 rounded-full mb-8 uppercase tracking-widest">
-              <ShieldCheck size={14} className="text-orange-400" />
+            <div className="hero-animate-1 inline-flex items-center gap-2 bg-brand-500/15 border border-brand-400/40 text-brand-300 text-xs font-bold px-4 py-2 rounded-full mb-8 uppercase tracking-widest">
+              <ShieldCheck size={14} className="text-brand-400" />
               {h.badge}
             </div>
 
             <h1 className="hero-animate-2 text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-5 tracking-tight">
               {h.headline1}<br />
-              <span className="text-orange-400">{h.headline2}</span><br />
+              <span className="text-brand-400">{h.headline2}</span><br />
               {h.headline3}
             </h1>
 
@@ -119,7 +119,7 @@ export default function Hero() {
             <div className="hero-animate-4 flex items-center gap-3 mb-10">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={20} className="text-orange-400 fill-orange-400" />
+                  <Star key={i} size={20} className="text-brand-400 fill-brand-400" />
                 ))}
               </div>
               <span className="text-white font-bold text-sm">5.0</span>
@@ -137,7 +137,7 @@ export default function Hero() {
               </div>
               <Link
                 href="#contact"
-                className="ml-2 pl-3 border-l border-white/20 text-orange-400 text-xs font-bold hover:text-orange-300 transition-colors whitespace-nowrap"
+                className="ml-2 pl-3 border-l border-white/20 text-brand-400 text-xs font-bold hover:text-brand-300 transition-colors whitespace-nowrap"
               >
                 Apply Now →
               </Link>
@@ -154,7 +154,7 @@ export default function Hero() {
               </a>
               <Link
                 href="#contact"
-                className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-4 rounded-xl text-base transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 animate-pulse-glow"
+                className="flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-bold px-8 py-4 rounded-xl text-base transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 animate-pulse-glow"
               >
                 <FileText size={18} />
                 {h.getFreeEstimate}
@@ -167,7 +167,7 @@ export default function Hero() {
                 const Icon = trustIcons[i]
                 return (
                   <div key={text} className="flex items-center gap-2 text-gray-300">
-                    <Icon size={15} className="text-orange-400" />
+                    <Icon size={15} className="text-brand-400" />
                     <span className="text-sm font-medium">{text}</span>
                   </div>
                 )
@@ -179,7 +179,7 @@ export default function Hero() {
           <div className="hidden lg:flex flex-col items-center justify-center">
             <div className="relative w-full animate-float">
               {/* Ambient glow behind the image */}
-              <div className="absolute inset-0 scale-90 translate-y-4 bg-orange-500/15 blur-3xl rounded-full pointer-events-none" />
+              <div className="absolute inset-0 scale-90 translate-y-4 bg-brand-500/15 blur-3xl rounded-full pointer-events-none" />
 
               {/* Hero plumber image */}
               <Image
@@ -192,7 +192,7 @@ export default function Hero() {
               />
 
               {/* Fleet-ready badge */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg whitespace-nowrap">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg whitespace-nowrap">
                 <Truck size={13} />
                 Our Fleet Is Ready — New Jersey
               </div>
@@ -208,7 +208,7 @@ export default function Hero() {
             key={s.label}
             className={`stat-animate-${i + 1} bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-4 text-center shadow-xl hover:bg-white/15 transition-colors`}
           >
-            <div className="text-2xl font-extrabold text-orange-400 leading-none">{s.value}</div>
+            <div className="text-2xl font-extrabold text-brand-400 leading-none">{s.value}</div>
             <div className="text-gray-300 text-xs mt-1 font-medium">{s.label}</div>
           </div>
         ))}

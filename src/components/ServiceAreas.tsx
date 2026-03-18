@@ -45,12 +45,12 @@ export default function ServiceAreas() {
 
               {/* Address overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-[#1B2A4A]/90 backdrop-blur-sm px-5 py-4 flex items-center gap-3">
-                <div className="w-9 h-9 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-9 h-9 bg-brand-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin size={16} className="text-white" />
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm leading-tight">125 Patriots Ridge Drive</p>
-                  <p className="text-orange-200 text-xs">Deptford, New Jersey 08096</p>
+                  <p className="text-brand-200 text-xs">Deptford, New Jersey 08096</p>
                 </div>
                 {/* Live indicator */}
                 <div className="ml-auto inline-flex items-center gap-1.5 bg-green-500/15 border border-green-400/30 text-green-300 text-xs font-medium px-3 py-1.5 rounded-full">
@@ -71,7 +71,7 @@ export default function ServiceAreas() {
               rightIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
             }`}
           >
-            <span className="text-orange-500 font-semibold text-sm uppercase tracking-widest">
+            <span className="text-brand-500 font-semibold text-sm uppercase tracking-widest">
               {sa.eyebrow}
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1B2A4A] mt-2 mb-4">
@@ -90,12 +90,12 @@ export default function ServiceAreas() {
                     rightIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
-                  <MapPin size={16} className="text-orange-500 group-hover:text-orange-300 flex-shrink-0 transition-colors" />
+                  <MapPin size={16} className="text-brand-500 group-hover:text-brand-300 flex-shrink-0 transition-colors" />
                   <div>
                     <span className="font-semibold text-[#1B2A4A] group-hover:text-white text-sm block transition-colors leading-tight">
                       {area.city}
                     </span>
-                    <span className="text-gray-400 group-hover:text-orange-300 text-xs transition-colors">
+                    <span className="text-gray-400 group-hover:text-brand-300 text-xs transition-colors">
                       {area.state}
                     </span>
                   </div>
@@ -103,14 +103,14 @@ export default function ServiceAreas() {
               ))}
             </div>
 
-            <div className="p-5 bg-orange-50 border border-orange-200 rounded-xl flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="p-5 bg-brand-50 border border-brand-200 rounded-xl flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="flex-1">
                 <p className="text-[#1B2A4A] text-sm font-semibold mb-0.5">{sa.notListed}</p>
-                <p className="text-orange-700 text-sm">{sa.callUs}</p>
+                <p className="text-brand-700 text-sm">{sa.callUs}</p>
               </div>
               <a
                 href="tel:+18569042097"
-                className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-orange-500 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors whitespace-nowrap flex-shrink-0"
+                className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-brand-500 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors whitespace-nowrap flex-shrink-0"
               >
                 <Phone size={14} />
                 (856) 904-2097

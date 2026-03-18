@@ -36,7 +36,7 @@ export default function Testimonials() {
           />
         </div>
         <div className="absolute inset-0 bg-[#0D1929]/90" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 blur-3xl rounded-full pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-500/10 blur-3xl rounded-full pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -62,7 +62,7 @@ export default function Testimonials() {
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-[#0D1929]/50 group-hover:bg-[#0D1929]/25 transition-colors duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
             </div>
           ))}
         </div>
@@ -99,7 +99,7 @@ export default function Testimonials() {
               key={`${review.name}-${i}`}
               className="w-80 flex-shrink-0 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="h-1.5 bg-orange-500 group-hover:bg-[#1B2A4A] transition-colors duration-300" />
+              <div className="h-1.5 bg-brand-500 group-hover:bg-[#1B2A4A] transition-colors duration-300" />
 
               <div className="p-7 relative">
                 <Quote
@@ -119,7 +119,7 @@ export default function Testimonials() {
                 </p>
 
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
+                  <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
                     {review.initials}
                   </div>
                   <div>

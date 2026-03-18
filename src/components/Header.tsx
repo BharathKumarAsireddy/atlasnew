@@ -63,10 +63,10 @@ function DropPanel({
           key={label}
           href={href}
           onClick={onClose}
-          className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-orange-50 group transition-colors"
+          className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-brand-50 group transition-colors"
         >
-          <div className="w-9 h-9 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-            <Icon size={15} className="text-orange-500 group-hover:text-white transition-colors" />
+          <div className="w-9 h-9 bg-brand-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-brand-500 transition-colors">
+            <Icon size={15} className="text-brand-500 group-hover:text-white transition-colors" />
           </div>
           <div>
             <div className="text-sm font-semibold text-[#0D1929]">{label}</div>
@@ -80,7 +80,7 @@ function DropPanel({
         <Link
           href={pageHref}
           onClick={onClose}
-          className="text-xs font-semibold text-orange-500 hover:text-orange-600 transition-colors"
+          className="text-xs font-semibold text-brand-500 hover:text-brand-600 transition-colors"
         >
           View All {pageLabel} Services →
         </Link>
@@ -109,7 +109,7 @@ function MobileAccordion({
         {label}
         <ChevronDown
           size={15}
-          className={`transition-transform duration-200 ${isOpen ? 'rotate-180 text-orange-400' : ''}`}
+          className={`transition-transform duration-200 ${isOpen ? 'rotate-180 text-brand-400' : ''}`}
         />
       </button>
 
@@ -123,7 +123,7 @@ function MobileAccordion({
               className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 group transition-colors"
             >
               <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Icon size={14} className="text-orange-300" />
+                <Icon size={14} className="text-brand-300" />
               </div>
               <div>
                 <div className="text-sm font-semibold text-white">{sLabel}</div>
@@ -194,8 +194,8 @@ export default function Header() {
       }`}
     >
       {/* ── Financing Announcement Bar ── */}
-      <div className="bg-[#0a1520] border-b border-orange-500/20 text-white py-2 px-4 flex items-center justify-center gap-3 text-xs sm:text-sm">
-        <span className="bg-orange-500 text-white font-black text-[10px] sm:text-xs px-2.5 py-0.5 rounded-md tracking-widest uppercase flex-shrink-0">
+      <div className="bg-[#0a1520] border-b border-brand-500/20 text-white py-2 px-4 flex items-center justify-center gap-3 text-xs sm:text-sm">
+        <span className="bg-brand-500 text-white font-black text-[10px] sm:text-xs px-2.5 py-0.5 rounded-md tracking-widest uppercase flex-shrink-0">
           0% APR
         </span>
         <span className="text-gray-300 font-medium hidden sm:inline">
@@ -206,7 +206,7 @@ export default function Header() {
         </span>
         <Link
           href="#contact"
-          className="text-orange-400 font-bold hover:text-orange-300 transition-colors whitespace-nowrap flex items-center gap-1"
+          className="text-brand-400 font-bold hover:text-brand-300 transition-colors whitespace-nowrap flex items-center gap-1"
         >
           Apply Now <span aria-hidden="true">→</span>
         </Link>
@@ -223,10 +223,10 @@ export default function Header() {
               alt="Atlas Plumbing"
               width={130}
               height={44}
-              className="object-contain"
+              className="object-contain mix-blend-screen"
               priority
             />
-            <span className="text-orange-300 text-[10px] font-semibold uppercase tracking-widest hidden sm:block">
+            <span className="text-brand-300 text-[10px] font-semibold uppercase tracking-widest hidden sm:block">
               Licensed & Insured
             </span>
           </Link>
@@ -247,7 +247,7 @@ export default function Header() {
                 onClick={() => toggle('plumbing')}
                 aria-expanded={activeDrop === 'plumbing'}
                 className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                  activeDrop === 'plumbing' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
+                  activeDrop === 'plumbing' ? 'text-brand-400' : 'text-gray-300 hover:text-white'
                 }`}
               >
                 Plumbing
@@ -267,7 +267,7 @@ export default function Header() {
                 onClick={() => toggle('heating')}
                 aria-expanded={activeDrop === 'heating'}
                 className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                  activeDrop === 'heating' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
+                  activeDrop === 'heating' ? 'text-brand-400' : 'text-gray-300 hover:text-white'
                 }`}
               >
                 Heating
@@ -287,7 +287,7 @@ export default function Header() {
                 onClick={() => toggle('cooling')}
                 aria-expanded={activeDrop === 'cooling'}
                 className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                  activeDrop === 'cooling' ? 'text-orange-400' : 'text-gray-300 hover:text-white'
+                  activeDrop === 'cooling' ? 'text-brand-400' : 'text-gray-300 hover:text-white'
                 }`}
               >
                 Cooling
@@ -330,12 +330,12 @@ export default function Header() {
                       key={l}
                       onClick={() => { setLang(l); setLangOpen(false) }}
                       className={`w-full flex items-center gap-2 px-4 py-2.5 text-sm font-semibold transition-colors ${
-                        lang === l ? 'bg-orange-50 text-orange-600' : 'text-gray-700 hover:bg-gray-50'
+                        lang === l ? 'bg-brand-50 text-brand-600' : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
                       <span>{l === 'en' ? '🇺🇸' : '🇲🇽'}</span>
                       <span className="uppercase">{l}</span>
-                      {lang === l && <span className="ml-auto text-orange-500 text-xs">✓</span>}
+                      {lang === l && <span className="ml-auto text-brand-500 text-xs">✓</span>}
                     </button>
                   ))}
                 </div>
@@ -352,7 +352,7 @@ export default function Header() {
             </a>
             <Link
               href="#contact"
-              className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-lg text-sm transition-all shadow-md animate-pulse-glow"
+              className="bg-brand-500 hover:bg-brand-600 text-white font-bold px-5 py-2 rounded-lg text-sm transition-all shadow-md animate-pulse-glow"
             >
               Free Estimate
             </Link>
@@ -426,7 +426,7 @@ export default function Header() {
                   key={l}
                   onClick={() => setLang(l)}
                   className={`flex items-center gap-1 px-3 py-1 rounded-lg text-sm font-semibold transition-colors ${
-                    lang === l ? 'bg-orange-500 text-white' : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    lang === l ? 'bg-brand-500 text-white' : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   <span>{l === 'en' ? '🇺🇸' : '🇲🇽'}</span>
@@ -446,7 +446,7 @@ export default function Header() {
               <Link
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className="text-center bg-orange-500 text-white font-bold px-5 py-3 rounded-lg text-sm"
+                className="text-center bg-brand-500 text-white font-bold px-5 py-3 rounded-lg text-sm"
               >
                 Free Estimate
               </Link>

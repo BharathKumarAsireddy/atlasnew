@@ -67,7 +67,7 @@ export default function ServiceRow({
 
             {/* Icon badge bottom corner */}
             <div className={`absolute bottom-6 ${imageLeft ? 'left-6' : 'right-6'}`}>
-              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center shadow-2xl">
+              <div className="w-16 h-16 bg-brand-500 rounded-2xl flex items-center justify-center shadow-2xl">
                 <Icon size={28} className="text-white" />
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function ServiceRow({
           >
             <div className="max-w-lg w-full">
               {/* badge */}
-              <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-600 text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 bg-brand-100 text-brand-600 text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-widest">
                 <Icon size={12} />
                 {badge}
               </div>
@@ -103,7 +103,7 @@ export default function ServiceRow({
               <ul className="space-y-2.5 mb-8">
                 {features.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
-                    <CheckCircle size={17} className="text-orange-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle size={17} className="text-brand-500 flex-shrink-0 mt-0.5" />
                     {f}
                   </li>
                 ))}
@@ -111,7 +111,7 @@ export default function ServiceRow({
 
               <a
                 href="tel:+18569042097"
-                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all shadow-lg hover:-translate-y-0.5"
               >
                 <Phone size={15} />
                 Call for This Service

@@ -67,12 +67,12 @@ export default function BrandingContent() {
           />
 
           {/* Ambient glow */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-60 bg-orange-500/15 blur-3xl rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-60 bg-brand-500/15 blur-3xl rounded-full pointer-events-none" />
           <div className="absolute top-20 right-10 w-40 h-40 bg-blue-500/10 blur-3xl rounded-full pointer-events-none" />
 
           {/* Section eyebrow */}
-          <div className="relative z-10 flex items-center gap-2 bg-orange-500/15 border border-orange-400/40 text-orange-300 text-xs font-bold px-4 py-2 rounded-full mb-10 uppercase tracking-widest">
-            <Truck size={13} className="text-orange-400" />
+          <div className="relative z-10 flex items-center gap-2 bg-brand-500/15 border border-brand-400/40 text-brand-300 text-xs font-bold px-4 py-2 rounded-full mb-10 uppercase tracking-widest">
+            <Truck size={13} className="text-brand-400" />
             Our Branded Fleet
           </div>
 
@@ -98,7 +98,7 @@ export default function BrandingContent() {
                 key={text}
                 className="flex items-center gap-1.5 bg-white/8 border border-white/15 text-white text-xs font-medium px-3 py-1.5 rounded-full"
               >
-                <Icon size={12} className="text-orange-400" />
+                <Icon size={12} className="text-brand-400" />
                 {text}
               </div>
             ))}
@@ -110,14 +110,14 @@ export default function BrandingContent() {
           <div className="max-w-xl">
 
             {/* Eyebrow */}
-            <span className="text-orange-500 font-semibold text-sm uppercase tracking-widest">
+            <span className="text-brand-500 font-semibold text-sm uppercase tracking-widest">
               Fleet Branding
             </span>
 
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl font-extrabold text-[#1B2A4A] mt-3 mb-5 leading-tight">
               Instantly Recognized.<br />
-              <span className="text-orange-500">Always Professional.</span>
+              <span className="text-brand-500">Always Professional.</span>
             </h1>
 
             {/* Intro */}
@@ -130,8 +130,8 @@ export default function BrandingContent() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
               {vanFeatures.map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="flex gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center">
-                    <Icon size={18} className="text-orange-500" />
+                  <div className="flex-shrink-0 w-10 h-10 bg-brand-500/10 rounded-xl flex items-center justify-center">
+                    <Icon size={18} className="text-brand-500" />
                   </div>
                   <div>
                     <h3 className="font-bold text-[#1B2A4A] text-sm mb-1">{title}</h3>
@@ -142,7 +142,7 @@ export default function BrandingContent() {
             </div>
 
             {/* Pull quote */}
-            <blockquote className="border-l-4 border-orange-500 pl-5 mb-10">
+            <blockquote className="border-l-4 border-brand-500 pl-5 mb-10">
               <p className="text-[#1B2A4A] font-semibold text-base italic leading-relaxed">
                 &ldquo;When our van pulls up, customers already know who we are, what we do,
                 and how to reach us. That trust starts before the first handshake.&rdquo;
@@ -159,7 +159,7 @@ export default function BrandingContent() {
                 'Consistent branding builds community recognition',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-gray-600 text-sm">
-                  <CheckCircle size={16} className="text-orange-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle size={16} className="text-brand-500 flex-shrink-0 mt-0.5" />
                   {item}
                 </li>
               ))}
@@ -169,7 +169,7 @@ export default function BrandingContent() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:+18569042097"
-                className="flex items-center justify-center gap-2 bg-[#1B2A4A] hover:bg-orange-500 text-white font-bold px-7 py-4 rounded-xl text-sm transition-all shadow-lg hover:-translate-y-0.5"
+                className="flex items-center justify-center gap-2 bg-[#1B2A4A] hover:bg-brand-500 text-white font-bold px-7 py-4 rounded-xl text-sm transition-all shadow-lg hover:-translate-y-0.5"
                 aria-label="Call Atlas Plumbing"
               >
                 <Phone size={16} />
@@ -177,7 +177,7 @@ export default function BrandingContent() {
               </a>
               <Link
                 href="/#contact"
-                className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-7 py-4 rounded-xl text-sm transition-all shadow-lg hover:-translate-y-0.5"
+                className="flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-bold px-7 py-4 rounded-xl text-sm transition-all shadow-lg hover:-translate-y-0.5"
               >
                 <FileText size={16} />
                 Get Free Estimate

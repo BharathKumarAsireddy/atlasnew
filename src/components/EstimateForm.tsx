@@ -68,7 +68,7 @@ export default function EstimateForm() {
   }
 
   const inputBase =
-    'w-full px-4 py-3 rounded-xl border text-[#0D1929] text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all'
+    'w-full px-4 py-3 rounded-xl border text-[#0D1929] text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 transition-all'
   const inputNormal = `${inputBase} border-gray-200 bg-white`
   const inputError  = `${inputBase} border-red-400 bg-red-50`
 
@@ -92,7 +92,7 @@ export default function EstimateForm() {
         </div>
         <div className="absolute inset-0 bg-[#1B2A4A]/90" />
         <div className="absolute inset-0 bg-gradient-to-l from-[#1B2A4A]/20 via-[#1B2A4A]/60 to-[#1B2A4A]/95" />
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-orange-500/15 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-brand-500/15 blur-3xl rounded-full" />
       </div>
 
       <div
@@ -105,19 +105,19 @@ export default function EstimateForm() {
 
           {/* Left: Info */}
           <div className="text-white lg:sticky lg:top-24">
-            <span className="text-orange-400 font-semibold text-sm uppercase tracking-widest">
+            <span className="text-brand-400 font-semibold text-sm uppercase tracking-widest">
               {f.eyebrow}
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-6">
               {f.heading}
             </h2>
-            <p className="text-orange-100 text-lg leading-relaxed mb-8">
+            <p className="text-brand-100 text-lg leading-relaxed mb-8">
               {f.description}
             </p>
             <ul className="space-y-3">
               {f.perks.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-orange-100">
-                  <CheckCircle size={18} className="text-orange-400 flex-shrink-0" />
+                <li key={item} className="flex items-center gap-3 text-brand-100">
+                  <CheckCircle size={18} className="text-brand-400 flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -135,7 +135,7 @@ export default function EstimateForm() {
                 <p className="text-gray-500 max-w-xs">{f.successMessage}</p>
                 <button
                   onClick={() => { setForm(initialForm); setStatus('idle') }}
-                  className="mt-4 text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors"
+                  className="mt-4 text-brand-500 font-semibold text-sm hover:text-brand-600 transition-colors"
                 >
                   {f.submitAnother}
                 </button>
@@ -238,7 +238,7 @@ export default function EstimateForm() {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="w-full flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-md"
+                  className="w-full flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 disabled:bg-brand-300 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-md"
                 >
                   {status === 'sending' ? (
                     <><Loader2 size={16} className="animate-spin" />{f.sending}</>
