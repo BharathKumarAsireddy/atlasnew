@@ -1,76 +1,14 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
 import Image from 'next/image'
-import { CheckCircle, Send, Loader2 } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import { useInView } from '@/hooks/useInView'
 import { useLanguage } from '@/context/LanguageContext'
-
-interface FormState {
-  name: string
-  phone: string
-  email: string
-  service: string
-  message: string
-}
-
-const initialForm: FormState = { name: '', phone: '', email: '', service: '', message: '' }
-
-function validate(form: FormState, errors: Record<string, string>) {
-  const e: Record<string, string> = {}
-  if (!form.name.trim())  e.name    = errors.nameRequired
-  if (!form.phone.trim()) e.phone   = errors.phoneRequired
-  else if (!/^[\d\s\-+().]{7,}$/.test(form.phone)) e.phone = errors.phoneInvalid
-  if (!form.email.trim()) e.email   = errors.emailRequired
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = errors.emailInvalid
-  if (!form.service)      e.service = errors.serviceRequired
-  return e
-}
 
 export default function EstimateForm() {
   const { t } = useLanguage()
   const f = t.estimateForm
   const { ref, inView } = useInView()
-
-  const [form,       setForm]       = useState<FormState>(initialForm)
-  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
-  const [status,     setStatus]     = useState<'idle' | 'sending' | 'success'>('idle')
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
-    const { name, value } = e.target
-    setForm((prev) => ({ ...prev, [name]: value }))
-    if (fieldErrors[name]) setFieldErrors((prev) => { const n = { ...prev }; delete n[name]; return n })
-  }
-
-  async function handleSubmit(e: FormEvent) {
-    e.preventDefault()
-    const errs = validate(form, f.errors)
-    if (Object.keys(errs).length) { setFieldErrors(errs); return }
-
-    setStatus('sending')
-    try {
-      // Submit to GoHighLevel webhook — replace URL with your actual GHL webhook if needed
-      await fetch('https://api.leadconnectorhq.com/hooks/hOxxRb1745wfKExtJoaZ/webhook-trigger/form-submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          full_name: form.name,
-          phone: form.phone,
-          email: form.email,
-          service: form.service,
-          message: form.message,
-        }),
-      })
-    } catch {
-      // silently continue — show success regardless to avoid blocking UX
-    }
-    setStatus('success')
-  }
-
-  const inputBase =
-    'w-full px-4 py-3 rounded-xl border text-[#0D1929] text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 transition-all'
-  const inputNormal = `${inputBase} border-gray-200 bg-white`
-  const inputError  = `${inputBase} border-red-400 bg-red-50`
 
   return (
     <section
@@ -124,133 +62,19 @@ export default function EstimateForm() {
             </ul>
           </div>
 
-          {/* Right: Custom Form */}
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl p-8">
-            {status === 'success' ? (
-              <div className="flex flex-col items-center justify-center text-center py-16 gap-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle size={36} className="text-green-500" />
-                </div>
-                <h3 className="text-2xl font-extrabold text-[#0D1929]">{f.successTitle}</h3>
-                <p className="text-gray-500 max-w-xs">{f.successMessage}</p>
-                <button
-                  onClick={() => { setForm(initialForm); setStatus('idle') }}
-                  className="mt-4 text-brand-500 font-semibold text-sm hover:text-brand-600 transition-colors"
-                >
-                  {f.submitAnother}
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                <h3 className="text-xl font-extrabold text-[#0D1929] mb-1">{f.formTitle}</h3>
-
-                {/* Full Name */}
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-                    {f.fullName} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="John Smith"
-                    required
-                    className={fieldErrors.name ? inputError : inputNormal}
-                  />
-                  {fieldErrors.name && <p className="text-red-500 text-xs mt-1">{fieldErrors.name}</p>}
-                </div>
-
-                {/* Phone + Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-                      {f.phone} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={form.phone}
-                      onChange={handleChange}
-                      placeholder="(555) 000-0000"
-                      required
-                      className={fieldErrors.phone ? inputError : inputNormal}
-                    />
-                    {fieldErrors.phone && <p className="text-red-500 text-xs mt-1">{fieldErrors.phone}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-                      {f.email} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="you@email.com"
-                      required
-                      className={fieldErrors.email ? inputError : inputNormal}
-                    />
-                    {fieldErrors.email && <p className="text-red-500 text-xs mt-1">{fieldErrors.email}</p>}
-                  </div>
-                </div>
-
-                {/* Service Needed — grouped dropdown */}
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-                    {f.serviceNeeded} <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="service"
-                    value={form.service}
-                    onChange={handleChange}
-                    required
-                    className={`${fieldErrors.service ? inputError : inputNormal} appearance-none cursor-pointer`}
-                  >
-                    <option value="" disabled>{f.selectService}</option>
-                    {f.serviceGroups.map((group) => (
-                      <optgroup key={group.group} label={group.group}>
-                        {group.options.map((opt) => (
-                          <option key={opt} value={opt}>{opt}</option>
-                        ))}
-                      </optgroup>
-                    ))}
-                  </select>
-                  {fieldErrors.service && <p className="text-red-500 text-xs mt-1">{fieldErrors.service}</p>}
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wide">
-                    {f.message}
-                  </label>
-                  <textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    rows={4}
-                    placeholder={f.messagePlaceholder}
-                    className={`${inputNormal} resize-none`}
-                  />
-                </div>
-
-                {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="w-full flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 disabled:bg-brand-300 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-md"
-                >
-                  {status === 'sending' ? (
-                    <><Loader2 size={16} className="animate-spin" />{f.sending}</>
-                  ) : (
-                    <><Send size={16} />{f.sendRequest}</>
-                  )}
-                </button>
-              </form>
-            )}
+          {/* Right: GHL Embedded Form */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/hOxxRb1745wfKExtJoaZ"
+              style={{ width: '100%', height: '600px', border: 'none' }}
+              title="Atlas Plumbing Web Form"
+              loading="lazy"
+            />
           </div>
+
         </div>
       </div>
+
     </section>
   )
 }
